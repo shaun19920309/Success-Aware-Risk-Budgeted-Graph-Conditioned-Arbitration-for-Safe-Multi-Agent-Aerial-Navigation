@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.log
+*.err.log
+*.pt
+*.pth
+*.ckpt
+*.zip
+wandb/
+runs/
+checkpoints/
+paper/
+paper_materials/
