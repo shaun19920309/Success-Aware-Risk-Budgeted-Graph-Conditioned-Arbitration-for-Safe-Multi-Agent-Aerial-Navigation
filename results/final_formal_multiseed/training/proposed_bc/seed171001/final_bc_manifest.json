@@ -1,0 +1,17 @@
+{
+  "protocol": "final_bounded_bc_v1",
+  "training_seed": 171001,
+  "epochs": 60,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "train_data": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_distilled_expert_20260826/datasets/teacher_train_160000_160031.npz",
+  "train_data_sha256": "fa8fbd768041b0277dec563b60b212bfc01a9ed23b625e34c72d98c241a44ce4",
+  "train_samples": 179456,
+  "validation_data": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_distilled_expert_20260826/datasets/teacher_validation_161000_161003.npz",
+  "validation_data_sha256": "5eae3c6e9da8adc0b389ed1169c36ff0ca2dfa0fd310030000428b12c5b578e7",
+  "validation_samples": 22432,
+  "checkpoint": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/proposed_bc/seed171001/models/student.pt",
+  "checkpoint_sha256": "b80797f43c4daae26f191d52f4b415e5e26bbe195421faf508eeffcb575c1c39",
+  "device": "cuda",
+  "cuda_device": "NVIDIA GeForce RTX 5090"
+}

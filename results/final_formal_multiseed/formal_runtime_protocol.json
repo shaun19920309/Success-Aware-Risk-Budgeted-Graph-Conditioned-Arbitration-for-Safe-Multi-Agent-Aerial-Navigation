@@ -1,0 +1,26 @@
+{
+  "protocol": "horizon7_formal_isolated_runtime_v1",
+  "preregistered_protocol_sha256": "f8e1e75e5d61e873e8c0009f10dc1ff3fa809fbca61c1d43707bc64aade8e913",
+  "formal_effect_protocol_sha256": "d6f75308e980bcc496f73493afa11233ea9ef31bb9adba561cfa6d969093eef8",
+  "baseline_training_seeds": [
+    240000,
+    240001,
+    240002
+  ],
+  "proposed_training_seeds": [
+    171001,
+    171002,
+    171003
+  ],
+  "runtime_environment_seeds": [
+    254000,
+    254001,
+    254002
+  ],
+  "sequential": true,
+  "cuda_synchronized": true,
+  "methods_recomputed": [
+    "lagrangian"
+  ],
+  "proposed_recomputed": false
+}

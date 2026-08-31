@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or evidence package, please cite the accompanying paper."
+title: "Liveness-Aware Obstacle-Waypoint Coordination With Bounded Neural Control for Multi-Agent Aerial Navigation"
+type: software
+authors:
+  - family-names: Xiong
+    given-names: Zheli
+    email: zlxiong@mail.ustc.edu.cn
+  - family-names: Zhao
+    given-names: Yao
+  - family-names: Chen
+    given-names: Jianpeng
+  - family-names: Chen
+    given-names: Gang
+repository-code: "https://github.com/shaun19920309/Success-Aware-Risk-Budgeted-Graph-Conditioned-Arbitration-for-Safe-Multi-Agent-Aerial-Navigation"
+version: 2.0.0
+date-released: 2026-08-31

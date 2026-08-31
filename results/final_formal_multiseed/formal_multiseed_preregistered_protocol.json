@@ -1,0 +1,168 @@
+{
+  "protocol_id": "horizon7_formal_multiseed_preregistered_v1",
+  "frozen_before_baseline_training_completion": true,
+  "frozen_before_effect_evaluation": true,
+  "created_local_date": "2026-08-26",
+  "training": {
+    "baseline_methods": [
+      "mappo",
+      "ippo",
+      "lagrangian",
+      "mat",
+      "hatrpo"
+    ],
+    "baseline_training_seeds": [240000, 240001, 240002],
+    "proposed_training_seeds": [171001, 171002, 171003],
+    "baseline_environment_steps": 1000000,
+    "episode_duration_seconds": 7.0,
+    "from_scratch": true
+  },
+  "environment": {
+    "quads_mode": "o_static_same_goal",
+    "use_obstacles": true,
+    "visible_neighbors": 2,
+    "shared_goal_slot_radius": 0.45,
+    "frames_per_rollout": 701
+  },
+  "nominal_confirmation": {
+    "num_agents": 8,
+    "obstacle_density": 0.2,
+    "obstacle_size": 0.6,
+    "evaluation_seeds": [
+      250000,
+      250001,
+      250002,
+      250003,
+      250004,
+      250005,
+      250006,
+      250007,
+      250008,
+      250009,
+      250010,
+      250011,
+      250012,
+      250013,
+      250014,
+      250015,
+      250016,
+      250017,
+      250018,
+      250019,
+      250020,
+      250021,
+      250022,
+      250023,
+      250024,
+      250025,
+      250026,
+      250027,
+      250028,
+      250029,
+      250030,
+      250031
+    ]
+  },
+  "proposed_generalization": {
+    "obstacle4_nominal": {
+      "num_agents": 4,
+      "obstacle_density": 0.2,
+      "obstacle_size": 0.6,
+      "evaluation_seeds": [
+        251000,
+        251001,
+        251002,
+        251003,
+        251004,
+        251005,
+        251006,
+        251007,
+        251008,
+        251009,
+        251010,
+        251011,
+        251012,
+        251013,
+        251014,
+        251015
+      ]
+    },
+    "obstacle8_dense_large": {
+      "num_agents": 8,
+      "obstacle_density": 0.3,
+      "obstacle_size": 0.8,
+      "evaluation_seeds": [
+        252000,
+        252001,
+        252002,
+        252003,
+        252004,
+        252005,
+        252006,
+        252007,
+        252008,
+        252009,
+        252010,
+        252011,
+        252012,
+        252013,
+        252014,
+        252015
+      ]
+    },
+    "obstacle8_sparse_small": {
+      "num_agents": 8,
+      "obstacle_density": 0.1,
+      "obstacle_size": 0.4,
+      "evaluation_seeds": [
+        253000,
+        253001,
+        253002,
+        253003,
+        253004,
+        253005,
+        253006,
+        253007,
+        253008,
+        253009,
+        253010,
+        253011,
+        253012,
+        253013,
+        253014,
+        253015
+      ]
+    }
+  },
+  "isolated_runtime": {
+    "evaluation_seeds": [254000, 254001, 254002],
+    "execution": "Sequential method, training-seed, and environment-seed runs after all effect evaluations exit; CUDA timing is synchronized."
+  },
+  "statistics": {
+    "independent_units": [
+      "training seed",
+      "matched environment seed"
+    ],
+    "primary_metrics": [
+      "success",
+      "collision",
+      "deadlock",
+      "goal_progress",
+      "native_objective_per_second"
+    ],
+    "descriptive_metrics": [
+      "risk_rate_distance_lt_0.65",
+      "risk_rate_distance_lt_1.0",
+      "moving_frame_ratio",
+      "path_length",
+      "final_goal_distance",
+      "transit_pair_risk_rate_distance_lt_0.65",
+      "transit_pair_risk_rate_distance_lt_1.0"
+    ],
+    "hierarchical_bootstrap_resamples": 100000,
+    "conditional_sign_flip_draws": 200000,
+    "multiplicity": "Holm across five metrics by five baselines",
+    "superiority_rule": "Favorable hierarchical 95% interval excluding zero, Holm-adjusted conditional p below 0.05, and favorable effects for all 9 cross-training-seed pairs"
+  },
+  "generalization_scope": "Proposed-only robustness across three training seeds; old 1 s-trained baseline checkpoints are excluded from generalization claims."
+}

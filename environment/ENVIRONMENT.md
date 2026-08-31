@@ -1,44 +1,28 @@
-# Environment Notes
+# Validated Environment
 
-The experiments were executed from WSL Ubuntu using the conda environment:
+The final experiments ran in WSL2 Ubuntu 24.04.2 with `/home/xzl/miniconda3/envs/sci1-rl/bin/python`.
 
-```text
-/home/xzl/miniconda3/envs/sci1-rl
-```
-
-Recommended invocation pattern:
-
-```bash
-BASE=$(find /mnt/h/xzl/sci1 -maxdepth 1 -type d -name '*graph_conditioned_lagrangian_shield' ! -name '*line1*' -print -quit)
-cd "$BASE"
-PY=/home/xzl/miniconda3/envs/sci1-rl/bin/python
-```
-
-The code depends on the repository-local third-party baseline sources under:
+Core versions:
 
 ```text
-repos/baseline_candidates/on-policy
-repos/baseline_candidates/HARL
+Python 3.9.25
+PyTorch 2.8.0+cu128
+CUDA 12.8 (PyTorch runtime)
+NumPy 1.24.4
+Matplotlib 3.8.4
+Gym 0.25.2
+sample-factory 2.1.1
+NVIDIA GeForce RTX 5090, 32607 MiB
 ```
 
-GPU evaluation uses:
+Create an environment with the matching major versions, then install the simulator and baseline repositories in editable mode:
 
 ```bash
-EVAL_DEVICE=cuda
+pip install -r environment/requirements-analysis.txt
+pip install -r environment/requirements-training.txt
+pip install -e repos/quad-swarm-rl
+pip install -e repos/baseline_candidates/on-policy
+pip install -e repos/baseline_candidates/HARL
 ```
 
-CPU evaluation is supported for script debugging but is not recommended for full formal evaluation.
-
-## Validated Final Workstation
-
-The retained final workflow was revalidated with:
-
-    WSL2 Ubuntu 24.04.2 LTS
-    Python 3.9.25
-    PyTorch 2.8.0+cu128
-    CUDA toolkit reported by PyTorch: 12.8
-    NumPy 1.24.4
-    NVIDIA GeForce RTX 5090, 32607 MiB
-    Intel Core i9-10900K
-
-The public repository intentionally excludes manuscript sources and therefore does not require a TeX installation for package verification.
+`pip_freeze.txt` records the complete validated environment. Its three local editable paths describe the original workstation and must be replaced by paths in the new checkout.

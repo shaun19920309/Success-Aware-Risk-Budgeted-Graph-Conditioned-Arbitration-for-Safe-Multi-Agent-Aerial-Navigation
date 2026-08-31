@@ -1,0 +1,80 @@
+{
+  "protocol": "horizon7_formal_multiseed_correction_v1",
+  "created_at": "2026-08-31T09:59:27+08:00",
+  "frozen_before_corrected_formal_training": true,
+  "scope": "MAPPO-Lagrangian training, evaluation, runtime, and downstream statistics only",
+  "original_preregistered_protocol_sha256": "f8e1e75e5d61e873e8c0009f10dc1ff3fa809fbca61c1d43707bc64aade8e913",
+  "failure_detected": {
+    "reason": "DummyVecEnv returned NumPy object-array infos that the safety-cost adapter ignored",
+    "consequence": "Safety costs and the dual multiplier were zero, making all three formal MAPPO-Lagrangian policies byte-identical to matched MAPPO policies",
+    "affected_training_seeds": [240000, 240001, 240002],
+    "invalidated_outputs": [
+      "MAPPO-Lagrangian checkpoints",
+      "MAPPO-Lagrangian nominal evaluations",
+      "MAPPO-Lagrangian runtime evaluations",
+      "statistics and paper artifacts containing those rows"
+    ]
+  },
+  "code_correction": {
+    "adapter": "Flatten NumPy vector-environment info arrays before extracting per-agent safety costs",
+    "regression_test": "scripts/test_onpolicy_lagrangian_costs.py",
+    "integrity_guard": "Reject identical policy checkpoint fingerprints across methods for a matched training seed"
+  },
+  "development_calibration": {
+    "excluded_from_formal_effect_claims": true,
+    "environment_steps": 30000,
+    "selection_uses_performance_metrics": false,
+    "selection_rule": "Choose the least complex zero-violation safety budget whose multiplier is active from the start, remains finite, and produces a policy fingerprint distinct from matched MAPPO",
+    "candidates": [
+      {
+        "seed": 260840,
+        "cost_limit": 0.0,
+        "lagrangian_init": 0.0,
+        "mean_observed_cost": 0.0015608306623931625,
+        "final_multiplier": 0.018261718750000013
+      },
+      {
+        "seed": 260841,
+        "cost_limit": 0.0,
+        "lagrangian_init": 1.0,
+        "mean_observed_cost": 0.0015858707264957265,
+        "final_multiplier": 1.018554687499997
+      },
+      {
+        "seed": 260842,
+        "cost_limit": 0.0005,
+        "lagrangian_init": 1.0,
+        "mean_observed_cost": 0.0015274439102564103,
+        "final_multiplier": 1.0120210937500032
+      }
+    ],
+    "same_seed_policy_control": {
+      "seed": 260841,
+      "lagrangian_actor_sha256": "371ccc67fc76703b706a818b93e2f9e1bd2963ab399332b2700672beae023fa0",
+      "mappo_actor_sha256": "485d7116fe98bf7d05f781c9078dbd1b5c791ebc7b7de48ea9da6d6e6de24e2c",
+      "distinct": true
+    }
+  },
+  "corrected_formal_training": {
+    "method": "lagrangian",
+    "algorithm_name": "mappo_lagrangian",
+    "training_seeds": [240000, 240001, 240002],
+    "environment_steps": 1000000,
+    "parameters": {
+      "use_lagrangian": true,
+      "lagrangian_cost_type": "hybrid",
+      "lagrangian_cost_limit": 0.0,
+      "lagrangian_lr": 0.05,
+      "lagrangian_init": 1.0,
+      "lagrangian_max": 20.0
+    }
+  },
+  "unchanged_protocol_elements": [
+    "environment and 7 s horizon",
+    "formal training seeds",
+    "nominal and runtime evaluation seeds",
+    "evaluation metrics",
+    "hierarchical bootstrap and multiplicity correction",
+    "all non-Lagrangian checkpoints and evaluations"
+  ]
+}

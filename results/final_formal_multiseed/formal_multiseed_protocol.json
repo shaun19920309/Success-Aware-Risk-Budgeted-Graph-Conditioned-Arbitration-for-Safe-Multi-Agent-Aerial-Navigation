@@ -1,0 +1,316 @@
+{
+  "protocol": "horizon7_formal_multiseed_v1",
+  "preregistered_protocol": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/formal_multiseed_preregistered_protocol.json",
+  "preregistered_protocol_sha256": "f8e1e75e5d61e873e8c0009f10dc1ff3fa809fbca61c1d43707bc64aade8e913",
+  "correction_addendum": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/formal_multiseed_correction_addendum_20260831.json",
+  "correction_addendum_sha256": "e6962b323f23102124b7a1b68dcfefaf39b318dd2668486c9a8128f83a8e1eca",
+  "baseline_training_seeds": [
+    240000,
+    240001,
+    240002
+  ],
+  "proposed_training_seeds": [
+    171001,
+    171002,
+    171003
+  ],
+  "evaluation_seeds": [
+    250000,
+    250001,
+    250002,
+    250003,
+    250004,
+    250005,
+    250006,
+    250007,
+    250008,
+    250009,
+    250010,
+    250011,
+    250012,
+    250013,
+    250014,
+    250015,
+    250016,
+    250017,
+    250018,
+    250019,
+    250020,
+    250021,
+    250022,
+    250023,
+    250024,
+    250025,
+    250026,
+    250027,
+    250028,
+    250029,
+    250030,
+    250031
+  ],
+  "environment": {
+    "num_agents": 8,
+    "quads_mode": "o_static_same_goal",
+    "episode_duration": 7.0,
+    "frames": 701,
+    "visible_neighbors": 2,
+    "shared_goal_slot_radius": 0.45,
+    "obstacle_density": 0.2,
+    "obstacle_size": 0.6
+  },
+  "baseline_runs": {
+    "mappo:240000": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240000/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240000/run1/config.json",
+      "config_sha256": "8d6b4ed777dde00875ce4bd97ee2dbdc5f73bafa60db22dab03c45c649304b81",
+      "checkpoint_sha256": {
+        "actor.pt": "8372128a52f700f81d228b0daf7f2dc08d469681c7fae8400ae35f3a87ec1849",
+        "critic.pt": "e24aefa71d073c2a08fb9b979d17c955024a10535752180bbd3f8ec676f03445"
+      }
+    },
+    "mappo:240001": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240001/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240001/run1/config.json",
+      "config_sha256": "3a267730710bdf359ac8d4ac9829c2ea52da0102df6f4e8a662265c2fc0e6f26",
+      "checkpoint_sha256": {
+        "actor.pt": "3780d9694c7f817378932cf2ef4d9e9b4ac74577134da2e5232f71d9c5d980bf",
+        "critic.pt": "d71ca3d14560888d7cf3e9541b9d1f685f2515f95e8fe5d65530d06a07bdbec6"
+      }
+    },
+    "mappo:240002": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240002/run2",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240002/run2/config.json",
+      "config_sha256": "b6c14566ac04360fc5b1f2441020e4b96238919c1bc129338d797f9861fc800d",
+      "checkpoint_sha256": {
+        "actor.pt": "518f332bac3dc1deede2e8123034d74f9567ed5dc33b25dbf3cb7ac07a418a6b",
+        "critic.pt": "094ab2d216787e32b40eb34212e7e32acd28d0ae4328249bd629db8114b1bbb4"
+      }
+    },
+    "ippo:240000": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240000/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240000/run1/config.json",
+      "config_sha256": "c527f1aadd13b70a6045efca2e01d3d561b7b1f8730ac0dbdc6fa17327505ea5",
+      "checkpoint_sha256": {
+        "actor.pt": "567b866286ab7ad5ecdeec09bd611f267ce13d436c4d6678d03a381071c7b48f",
+        "critic.pt": "b181cc7c0b4ae4eb17ab3dba6cb97cb00f8af3b44cd76d24d9736ddac739309d"
+      }
+    },
+    "ippo:240001": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240001/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240001/run1/config.json",
+      "config_sha256": "4cbad92b8bc20831f61dbf830438762921fe8e40590144d5a206a79458a22d89",
+      "checkpoint_sha256": {
+        "actor.pt": "44cec4a396d629cf5237ca02e272bd3dfd1afd5ac15162552d612d7dcf6d9d85",
+        "critic.pt": "0367fd61b5f94efadeaa659b70ddc9f35837dfeb2b5e6f277a9b5fd801868331"
+      }
+    },
+    "ippo:240002": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240002/run2",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed240002/run2/config.json",
+      "config_sha256": "3abcbce806740fb21706e280f4899f0866fc0631ac7bbcf3939c91237c75c6a9",
+      "checkpoint_sha256": {
+        "actor.pt": "baaced8841040665e05debba5b7a9531c76b49349f39802ff242f586320e16ee",
+        "critic.pt": "f024030fa0daaa3c69f6e7b7a737f97d1e904dfa87421e9e7e32336a096c0d60"
+      }
+    },
+    "lagrangian:240000": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240000/run2",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240000/run2/config.json",
+      "config_sha256": "7d909127bf62ac350bfc5167e1375edc9e357f5b97f9c13315a93e5fee832769",
+      "checkpoint_sha256": {
+        "actor.pt": "4973b93ae1636a8b0d89a7a6e8346467150efffb4dd2fe1e38369ed064acc3fa",
+        "critic.pt": "9776740a1318cc5ce8b96f71439339cbf6cd1556b78b6da2b141ca4a184e74be"
+      }
+    },
+    "lagrangian:240001": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240001/run2",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240001/run2/config.json",
+      "config_sha256": "47bc0415fc0f16b22b9e458e6ee911390fe83318917f6d7acf0b51f154abc294",
+      "checkpoint_sha256": {
+        "actor.pt": "8eacb504f1b23c8ab4affd9add4a66495dc12375a7a2784f2f6b389c35130ce8",
+        "critic.pt": "019c1a2d41890ff5392e444b036458c25efb277ab1360445a37d1dc1893b327c"
+      }
+    },
+    "lagrangian:240002": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240002/run3",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed240002/run3/config.json",
+      "config_sha256": "bdddea76323a662c4a10ffcef15a17121b177a07c6a96e0f9fc9a906cf08cc2b",
+      "checkpoint_sha256": {
+        "actor.pt": "ded673dfe782d118edfc5f162d0af04e456da3bbb79496e93076fbf3b7150e41",
+        "critic.pt": "3ddc8d98abac2b23c6940fce280a892e76158f36075d0e1a126edeb16d905258"
+      }
+    },
+    "mat:240000": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240000/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240000/run1/config.json",
+      "config_sha256": "28a50c7798d3e645eba7321919c7db47a8d8270e8ed309b6c285957fc669113d",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "f987407d1dc071b1781683465049ed0b940c90e8c37d2645afbbaa9aa7d88eab"
+      }
+    },
+    "mat:240001": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240001/run1",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240001/run1/config.json",
+      "config_sha256": "38cdffd5400337e163450c91c603976a66c711cef52ee19008023258a69e31b7",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "8708c79f81f71183ae18f9037a128e5ea2d34b1e7d6857786e9af35ea929d52f"
+      }
+    },
+    "mat:240002": {
+      "family": "onpolicy",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240002/run2",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed240002/run2/config.json",
+      "config_sha256": "bb049bdd8ea1ced60f75f8ed5613639ba8a6b7bad1eb796366e7346453668467",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "8c6fc15f626db209d3688137b607749f98f4eb292c26476b5ada24049655cedd"
+      }
+    },
+    "hatrpo:240000": {
+      "family": "harl",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240000/seed-240000-2026-08-26-21-21-37",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240000/seed-240000-2026-08-26-21-21-37/config.json",
+      "config_sha256": "45d29b6f2f14be5c3681c8c40060d5b1ffd7ff1f979bd021250dae59b420aa54",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "d889cdd9523b0480ed5b132b452ba8750085d564a4addfd8d58bb13e234f70db",
+        "actor_agent1.pt": "94720887e2ab95bae96dde50dd68648d2dd3f0ab39e5b172902ed28863046bab",
+        "actor_agent2.pt": "067a0bd120b850636e2654f84a9dfb178f40ccfcf9f860da17855378b4954caa",
+        "actor_agent3.pt": "eee6b180526f1eae5f34ebacfea751453ae7ae3f2e67e3763f58b5ced3c8e6c1",
+        "actor_agent4.pt": "4e593bc80a94640e7f47955a75b31a1cb9c53ac254ed4754a9d1e3fde34c604c",
+        "actor_agent5.pt": "c3eff3480a371a75cca2d6e1db57fcc2f19806d92f4ea2334dc5e0a9b1b4e8a5",
+        "actor_agent6.pt": "6024f510470b4d488c3b28d1dcf9113fb888db4e220a078671cca495ff659d26",
+        "actor_agent7.pt": "bd041229a7b2edc6f465f67746a7099bb69191987fd1cec9db5857a4352d6892",
+        "critic_agent.pt": "c241c17eaf002451ca5ac6fb5004a9e8e673ba9081963becbd682f51cd39dbe0"
+      }
+    },
+    "hatrpo:240001": {
+      "family": "harl",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240001/seed-240001-2026-08-27-13-23-26",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240001/seed-240001-2026-08-27-13-23-26/config.json",
+      "config_sha256": "320bb6f1d452a3ebaca71eb9c17c69439be5a08c144477ac6bcfa702f452c8f0",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "9184d371fc13e7bb5cd2379a9d567ef8a9d103a3dc5c4706d7578ed0e51825b1",
+        "actor_agent1.pt": "d9a3a04508833056cc28c81c7b8ad61de86cd7fef0ba63168a569de81d83ed6f",
+        "actor_agent2.pt": "065593738cdbccee7d7fd9cc8cd61f3cde42c7668b583274afe7871fb883f819",
+        "actor_agent3.pt": "a23481a49b4e7f0d6022f624271c18cabcd09e512794144a326353803d7604f2",
+        "actor_agent4.pt": "ff2f3b4fc0034c14163fe1f5442f9c30111905defb32d9dd331211d7d7f21baa",
+        "actor_agent5.pt": "4c4f15079c30e5e258754526314bd3fe2c1fc87103564d12cf11b1a2691e10d8",
+        "actor_agent6.pt": "99b69a63a0047869606f2a4222897bcddec2e4f71185b1a996bf391797ee1937",
+        "actor_agent7.pt": "375ce351ab88ad44f6fad25c4780fb0c93762c2616afb2dc715ca580d36d68b6",
+        "critic_agent.pt": "c57aa612c8ac7cf3163c6f160cda842f2716d25f0d096061b7c78b4fcb19a328"
+      }
+    },
+    "hatrpo:240002": {
+      "family": "harl",
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240002/seed-240002-2026-08-28-01-43-12",
+      "config": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed240002/seed-240002-2026-08-28-01-43-12/config.json",
+      "config_sha256": "e9353396ee742b174fc12ad6affeec92aabbe0e76586aaf52e255b6dcdb464b8",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "dd1d78d7c1c08df1668ab9bd51fa3064cfbc852ad1fba994c4e588849745f522",
+        "actor_agent1.pt": "807e4361a961715c8c740db69b3593a25d64a6b42497f9751c278fb2206b0659",
+        "actor_agent2.pt": "ad0c68bed90db51f607aea7b88b08c9467f8495814bda10ecf51d3ecc948284c",
+        "actor_agent3.pt": "bb998a42d83159257342f0a173ef3b55e1c26010c31d8be4036576c85ce6dbd7",
+        "actor_agent4.pt": "dd329ceb00c9788ecce409fb7489d06182e32922ed035582ad40d10fd9331958",
+        "actor_agent5.pt": "6d87a5476687235cd60f2c4e5203b4acf3609d918b0523041de5387c9233f649",
+        "actor_agent6.pt": "9c8e09448271bdd99e671585521c065e3fbea6a2e7dc8b4e9f3c3a972d0e5c88",
+        "actor_agent7.pt": "9ffb5b78b9dab0b870f31ff43bf869a7207ae978e8eff5b37ef0ca81a4d8a969",
+        "critic_agent.pt": "40b703c47d2a5cc97628f233c48e09db596e19a786a6120ce270c897356fec3b"
+      }
+    }
+  },
+  "proposed_runs": {
+    "171001": {
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/proposed_bc/seed171001",
+      "checkpoint_sha256": "b80797f43c4daae26f191d52f4b415e5e26bbe195421faf508eeffcb575c1c39"
+    },
+    "171002": {
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/proposed_bc/seed171002",
+      "checkpoint_sha256": "28c636b98a60d34ddfc1d672022591f0986e02731b55d1ab8f1f5b2227674119"
+    },
+    "171003": {
+      "run_dir": "/home/xzl/sci1_repo/results/revision_horizon7_formal_multiseed_20260826/training/proposed_bc/seed171003",
+      "checkpoint_sha256": "e2d1e1fa18c1fb2d2478c2be962f7e6b3534094886ff73a4a03af239b7b68652"
+    }
+  },
+  "generalization_scenarios": {
+    "obstacle4_nominal": {
+      "num_agents": 4,
+      "obstacle_density": 0.2,
+      "obstacle_size": 0.6,
+      "evaluation_seeds": [
+        251000,
+        251001,
+        251002,
+        251003,
+        251004,
+        251005,
+        251006,
+        251007,
+        251008,
+        251009,
+        251010,
+        251011,
+        251012,
+        251013,
+        251014,
+        251015
+      ]
+    },
+    "obstacle8_dense_large": {
+      "num_agents": 8,
+      "obstacle_density": 0.3,
+      "obstacle_size": 0.8,
+      "evaluation_seeds": [
+        252000,
+        252001,
+        252002,
+        252003,
+        252004,
+        252005,
+        252006,
+        252007,
+        252008,
+        252009,
+        252010,
+        252011,
+        252012,
+        252013,
+        252014,
+        252015
+      ]
+    },
+    "obstacle8_sparse_small": {
+      "num_agents": 8,
+      "obstacle_density": 0.1,
+      "obstacle_size": 0.4,
+      "evaluation_seeds": [
+        253000,
+        253001,
+        253002,
+        253003,
+        253004,
+        253005,
+        253006,
+        253007,
+        253008,
+        253009,
+        253010,
+        253011,
+        253012,
+        253013,
+        253014,
+        253015
+      ]
+    }
+  }
+}

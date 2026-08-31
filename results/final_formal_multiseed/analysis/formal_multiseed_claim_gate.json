@@ -1,0 +1,206 @@
+{
+  "rule": "Favorable hierarchical interval, Holm p < 0.05, and 9/9 cross-training-seed pairs favorable",
+  "all_25_primary_claims_accepted": true,
+  "claims": [
+    {
+      "baseline": "mappo",
+      "metric": "success",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mappo",
+      "metric": "collision",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mappo",
+      "metric": "deadlock",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mappo",
+      "metric": "progress",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mappo",
+      "metric": "objective_s",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "ippo",
+      "metric": "success",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "ippo",
+      "metric": "collision",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "ippo",
+      "metric": "deadlock",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "ippo",
+      "metric": "progress",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "ippo",
+      "metric": "objective_s",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "lagrangian",
+      "metric": "success",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "lagrangian",
+      "metric": "collision",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "lagrangian",
+      "metric": "deadlock",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "lagrangian",
+      "metric": "progress",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "lagrangian",
+      "metric": "objective_s",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mat",
+      "metric": "success",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mat",
+      "metric": "collision",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mat",
+      "metric": "deadlock",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mat",
+      "metric": "progress",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "mat",
+      "metric": "objective_s",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "hatrpo",
+      "metric": "success",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "hatrpo",
+      "metric": "collision",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "hatrpo",
+      "metric": "deadlock",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "hatrpo",
+      "metric": "progress",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    },
+    {
+      "baseline": "hatrpo",
+      "metric": "objective_s",
+      "favorable_hierarchical_interval": true,
+      "holm_p_below_0_05": true,
+      "all_cross_training_seed_pairs_favorable": true,
+      "superiority_claim_accepted": true
+    }
+  ]
+}
