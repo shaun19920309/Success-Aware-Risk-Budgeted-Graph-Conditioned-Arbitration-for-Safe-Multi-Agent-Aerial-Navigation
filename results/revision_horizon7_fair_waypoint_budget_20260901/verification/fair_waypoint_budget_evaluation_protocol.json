@@ -1,0 +1,785 @@
+{
+  "protocol": "horizon7_fair_waypoint_budget_v1",
+  "created_at_utc": "2026-09-08T21:53:44.065209+00:00",
+  "frozen_protocol_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/fair_waypoint_budget_preregistered_protocol.json",
+  "frozen_protocol_sha256": "cf486cb8a4e5685edb44dfff333b019f117244cc9738ce75b60012adf1cb0d6d",
+  "base_environment_run": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_formal_multiseed_20260826/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed240000/run1",
+  "base_environment_config_sha256": "8d6b4ed777dde00875ce4bd97ee2dbdc5f73bafa60db22dab03c45c649304b81",
+  "shared_runtime_hierarchy": true,
+  "action_ensemble_or_shield": false,
+  "environment_seeds": [
+    250000,
+    250001,
+    250002,
+    250003,
+    250004,
+    250005,
+    250006,
+    250007,
+    250008,
+    250009,
+    250010,
+    250011,
+    250012,
+    250013,
+    250014,
+    250015,
+    250016,
+    250017,
+    250018,
+    250019,
+    250020,
+    250021,
+    250022,
+    250023,
+    250024,
+    250025,
+    250026,
+    250027,
+    250028,
+    250029,
+    250030,
+    250031
+  ],
+  "frames_per_episode": 701,
+  "variants": [
+    {
+      "variant": "fair_mappo_train260000_step1000000",
+      "method": "mappo",
+      "training_seed": 260000,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "8a36f64df409b62f68335dcbdd8fb167811076c1a3223e9b84b8c1bb5e8619dc",
+      "milestone_manifest_sha256": "877baa5c08c989841da030545fa4f89441d4ab402d950401e7a7f8709b78d2c1",
+      "checkpoint_sha256": {
+        "actor.pt": "2b81b08f5fdddb01b81b9790d98eccf967e811802fdb696fe890a0180e7db513",
+        "critic.pt": "6974973cae1613c1fcb8d6666e528a96ee1074a4ce76b3707b79f735ad22fd85"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260000_step3000000",
+      "method": "mappo",
+      "training_seed": 260000,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "8a36f64df409b62f68335dcbdd8fb167811076c1a3223e9b84b8c1bb5e8619dc",
+      "milestone_manifest_sha256": "22c6f8e6efc4b4a98aaf4e46efe76a449001ef91a006bb29ee7e40af3357a75c",
+      "checkpoint_sha256": {
+        "actor.pt": "d3e1e06330fd194184e7c364f2a94b25424ffe48ae5eb5edc1a95f6357253b24",
+        "critic.pt": "37dc33d81f789d2fca1f39ce46285813ea4d1862767811abf27bb2175e511f1c"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260000_step5000000",
+      "method": "mappo",
+      "training_seed": 260000,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "8a36f64df409b62f68335dcbdd8fb167811076c1a3223e9b84b8c1bb5e8619dc",
+      "milestone_manifest_sha256": "3f0375a64906b6be5fa2bc9a39f6228d005137a322e35e1ce041784351573caf",
+      "checkpoint_sha256": {
+        "actor.pt": "2a920733004837f592482ee1c328744e5a029b4a7dfb9403053bb15c3f9eccb3",
+        "critic.pt": "9f570f6a8d59a6ba9c10aca165c866449a481825270f83f5583264145c2d8a79"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260001_step1000000",
+      "method": "mappo",
+      "training_seed": 260001,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "80b9ad7b36324a59541d8675b6df829bb9cba584c3a59b5af79b3e846051194e",
+      "milestone_manifest_sha256": "950b549c43c44ed5ab831e069129c9577638bd52f97c6f1221d6faa120496b5e",
+      "checkpoint_sha256": {
+        "actor.pt": "75649fb3f9c17ac2e79d6dd8efc4e6991ea610eedeac49169dadedfe33333e84",
+        "critic.pt": "eb0f838896915cd7ceab018c5a43af458363b14df8bc4c0b0b7d2062de0f6df1"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260001_step3000000",
+      "method": "mappo",
+      "training_seed": 260001,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "80b9ad7b36324a59541d8675b6df829bb9cba584c3a59b5af79b3e846051194e",
+      "milestone_manifest_sha256": "6e2d5e5065b89c16ae5b17001c2c8597fd9ac338a3adc93b35ff7ebb7b99a313",
+      "checkpoint_sha256": {
+        "actor.pt": "ee3b99332b41130feb85fd25abbe0c46e06b5ed33afadccb45e18e9182938e04",
+        "critic.pt": "02db9ae1bb2fe8200b331fc1e4a93b723dab94b1fca40e940e2acdb0b82c21e3"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260001_step5000000",
+      "method": "mappo",
+      "training_seed": 260001,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "80b9ad7b36324a59541d8675b6df829bb9cba584c3a59b5af79b3e846051194e",
+      "milestone_manifest_sha256": "6875a86b23d9e7de82154d71919b4598b8fb993e2c65e02949badd16a435e3d5",
+      "checkpoint_sha256": {
+        "actor.pt": "a3e80faff4947bc4fd84462a06dbcb7a0217ba2c00c0d8f379f9445409afa8b7",
+        "critic.pt": "7788ec153750b5b331b88587e982793131fba7b02aad9252f6d71828df51dce8"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260002_step1000000",
+      "method": "mappo",
+      "training_seed": 260002,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "a4a2907b0eb17ad25332e846ae9fd43dfe84c65929b7b459cfcbf8c6ad864359",
+      "milestone_manifest_sha256": "4829bc792e7c6a9157841c430fb7d2b1e97499863f0cfa8574870f800a2c020e",
+      "checkpoint_sha256": {
+        "actor.pt": "d6fee65bd24c952115c54ebfc3c27501a50e1573845df58c7122d9e224c30438",
+        "critic.pt": "6258d46ca800b2e927869966e5c9f573247b5eba2b82bb475f5f365b2a9d1ba9"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260002_step3000000",
+      "method": "mappo",
+      "training_seed": 260002,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "a4a2907b0eb17ad25332e846ae9fd43dfe84c65929b7b459cfcbf8c6ad864359",
+      "milestone_manifest_sha256": "12761f224d5d3745ad7270449a006200afaf20561116fbb30c656eac21d8cc43",
+      "checkpoint_sha256": {
+        "actor.pt": "a9309c8e6f1f9a5585db80539b51e4c9a455e5ae7d657520e7642a0bb8e52865",
+        "critic.pt": "2cd5fa67526782131cab3f27869ce4b949ea4d7fb8481af2dad7c4e641564912"
+      }
+    },
+    {
+      "variant": "fair_mappo_train260002_step5000000",
+      "method": "mappo",
+      "training_seed": 260002,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "a4a2907b0eb17ad25332e846ae9fd43dfe84c65929b7b459cfcbf8c6ad864359",
+      "milestone_manifest_sha256": "3722f15af333b35b3d34e7b1a57891daf38515114e2380e03eef8692bf4180b0",
+      "checkpoint_sha256": {
+        "actor.pt": "8426d798f4b4755810d24b2f44867d247e3e763df1a0c487c921fc6753ebb832",
+        "critic.pt": "311224b6fad84800fc5f8d12c32c77ce2d7b81d9c76565852af5328deb982539"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260000_step1000000",
+      "method": "ippo",
+      "training_seed": 260000,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "7476d7d0374fab892000653c29ddadb2d366cd1f1c94eba666238186ecd95814",
+      "milestone_manifest_sha256": "209e8917e52d5284e53e44ce916b048cda829a5af490b28fa026ec513cbd71da",
+      "checkpoint_sha256": {
+        "actor.pt": "b010211e344764057850977510ef6ce1399b68f5df7a88b229160516af017a41",
+        "critic.pt": "7c3bbb609801c13029f1bc678859a78e3cc8460ffbd5ad999c3f6e070a7a61da"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260000_step3000000",
+      "method": "ippo",
+      "training_seed": 260000,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "7476d7d0374fab892000653c29ddadb2d366cd1f1c94eba666238186ecd95814",
+      "milestone_manifest_sha256": "9075b66b327b039ad7759657bad918f5af184b3ca86d9de34b422bfa77536cfb",
+      "checkpoint_sha256": {
+        "actor.pt": "b9dbcad59e5390c186038fecd59bbb720d250b805919d7ed5dc698f0afc19619",
+        "critic.pt": "b52adafbea322d8d818ef78a3ac25fa0b73008bb0c55df755ec6cb5e6fccd061"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260000_step5000000",
+      "method": "ippo",
+      "training_seed": 260000,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "7476d7d0374fab892000653c29ddadb2d366cd1f1c94eba666238186ecd95814",
+      "milestone_manifest_sha256": "4af39cee7ead5bb88c3a629cfd4389acb70ad1481a923a37c2e02ce7719985f5",
+      "checkpoint_sha256": {
+        "actor.pt": "020677d591e31f785b90130eed1d59b85860e6cbe84a61ec53b4ceb083dbdb02",
+        "critic.pt": "ceb15440ebe5c8a4f24715887cea87d3282e0cd856a7ac42e0dde26e009f6057"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260001_step1000000",
+      "method": "ippo",
+      "training_seed": 260001,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "203a5f85277b8844f1868eb8e1d7fc939e436ae3e49bf21100440525e65ecb8e",
+      "milestone_manifest_sha256": "da784e485c6d8540565a47406a7ab45d77bf22d5c12c375e98b12eb7afcebb8e",
+      "checkpoint_sha256": {
+        "actor.pt": "7d7ee7765bdf1d4928665acf0a43e822aea4cdaecf7f25c2b1f441508ee03aca",
+        "critic.pt": "3e3f03aee219968332973d160da07411d4f3dbebbcd8b7fb35d011e30a1cedb1"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260001_step3000000",
+      "method": "ippo",
+      "training_seed": 260001,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "203a5f85277b8844f1868eb8e1d7fc939e436ae3e49bf21100440525e65ecb8e",
+      "milestone_manifest_sha256": "2ce937b8c3c3acecad92301ab15810e56b1a4eb67837805521f53e9ba4119326",
+      "checkpoint_sha256": {
+        "actor.pt": "7ca4311a9ac84a2d0c720594fb16e2a0ab755ec801ab66cff04eab810483e067",
+        "critic.pt": "be17c6c34ff9bc6e0d8941b7b515be94bb7089a36da20b850096a43ca3ce77eb"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260001_step5000000",
+      "method": "ippo",
+      "training_seed": 260001,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "203a5f85277b8844f1868eb8e1d7fc939e436ae3e49bf21100440525e65ecb8e",
+      "milestone_manifest_sha256": "6a68ae8393489a80cff9e64f3266758ed0ab654db8cedffd664cd9fbb2c6820f",
+      "checkpoint_sha256": {
+        "actor.pt": "57648daf78a9790fadbdcfa8eb7422535c700c3361ddc31f97e42f8c81472719",
+        "critic.pt": "29cea09e640b7570dbdde86411c1a3e4848f8c72403e46b9800c0d5d47f3597c"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260002_step1000000",
+      "method": "ippo",
+      "training_seed": 260002,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "ecc905c873026280ac66cc73a9fd30df963025aba767d3dba1f7def61f6ef014",
+      "milestone_manifest_sha256": "8ab642bed5fa49a8b579dbe4b16293b57e5fb0cee54c8e0c5ea1f30ea2473c80",
+      "checkpoint_sha256": {
+        "actor.pt": "cf6b6c5623d5e949edad146254b57787b0c1703c490edc4c16637f476fc69fc0",
+        "critic.pt": "fb7f2f22914a13e4141c45417848d194e5cc1acc7de4f29d56772dc7ac81f2ed"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260002_step3000000",
+      "method": "ippo",
+      "training_seed": 260002,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "ecc905c873026280ac66cc73a9fd30df963025aba767d3dba1f7def61f6ef014",
+      "milestone_manifest_sha256": "092869867267ad04ed1d5b5087a5e95f8840b71eb16c0f4909e544fc08a36b6d",
+      "checkpoint_sha256": {
+        "actor.pt": "3b5815fb17cb765289e28aca07f29fa93b583f698f5a7f2f69be6c33f5a6627e",
+        "critic.pt": "2c9e9b9ad04a8b8db434d78a4caee48409a5ee50418c0fc7abd1001eb4df05b3"
+      }
+    },
+    {
+      "variant": "fair_ippo_train260002_step5000000",
+      "method": "ippo",
+      "training_seed": 260002,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "ippo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "ecc905c873026280ac66cc73a9fd30df963025aba767d3dba1f7def61f6ef014",
+      "milestone_manifest_sha256": "d0b66c4e4434afaf5a2e7971e0afeed4ca354f3b5eda7f3c973eb189634026d9",
+      "checkpoint_sha256": {
+        "actor.pt": "a43458940996e0a9b2bfcb0861daf8cc0eff97ec4237645d3599ed1f9898c57d",
+        "critic.pt": "f4b09782f34b353e341790abac005055cd5a99cbfbd8d1ae507c0a9dba71b45d"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260000_step1000000",
+      "method": "lagrangian",
+      "training_seed": 260000,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "c966b91dc14618162963d022fe021494e0ab7c414478712a79749fc43d7bd943",
+      "milestone_manifest_sha256": "e5f1761240a3bfd88d613dfb6acf78c6cf7955bcbaf25c7009521eed4495dc2b",
+      "checkpoint_sha256": {
+        "actor.pt": "82d5e9b804dbcd39bb60ca7076cbb045d0c49e0903c322768a65abf9dae28892",
+        "critic.pt": "9c8bfa6441f515d968b2aecb567603dec056a4c4aa6249a1d9b02e2a9c61160b"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260000_step3000000",
+      "method": "lagrangian",
+      "training_seed": 260000,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "c966b91dc14618162963d022fe021494e0ab7c414478712a79749fc43d7bd943",
+      "milestone_manifest_sha256": "b6ac07268f6041cd57939029a3e50d55c1ce036291ddbad4524342768ee0735f",
+      "checkpoint_sha256": {
+        "actor.pt": "81b666c1636a1fcec11868e09f9229a86f0378c23fce81c4dfad5d8e934a89d9",
+        "critic.pt": "d568c77106c6f75374f8f5316f64fe431a303bbc5bc06d2de8b6fc5c69e56036"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260000_step5000000",
+      "method": "lagrangian",
+      "training_seed": 260000,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "c966b91dc14618162963d022fe021494e0ab7c414478712a79749fc43d7bd943",
+      "milestone_manifest_sha256": "977e3db73e5bd8624a5e0d1df239b4f0b5d1d4094c9ba7bd95fb9613cfa0a8e5",
+      "checkpoint_sha256": {
+        "actor.pt": "929777961319ae2d5493f784718181230333049a0984482190c1f17f1ee32df0",
+        "critic.pt": "6c02d46b7de3c3c8e2d0683148c0de5cdccd7bdb6009f0f3fcdb78bcc373cdb4"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260001_step1000000",
+      "method": "lagrangian",
+      "training_seed": 260001,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "a89632d95692c81422a0f9b8f8fb0d2842db83b8266d990948834b2bbbff403c",
+      "milestone_manifest_sha256": "8ce4fe7cc08ea2f59db3d6d0a68083103dce92e91ad0c893edbc27a2f092093d",
+      "checkpoint_sha256": {
+        "actor.pt": "2516d8ccccbfef75c512806249e429389812cf5211afa8596c9fe63534f21357",
+        "critic.pt": "9d34e84cac0d94031e7532b3c4e802f36c9860347a5cea177d0f47b248eab922"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260001_step3000000",
+      "method": "lagrangian",
+      "training_seed": 260001,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "a89632d95692c81422a0f9b8f8fb0d2842db83b8266d990948834b2bbbff403c",
+      "milestone_manifest_sha256": "ed4b3f98884d7837757def6829a2d45238d34f2b86326bc7e96e319d091aed6e",
+      "checkpoint_sha256": {
+        "actor.pt": "e155f2824203ed190bc15ea522d9851b1391359235f97e71f6324688c0141e88",
+        "critic.pt": "7221363d2b5a955dfa76f195cb82a4ce52a34fc9ff72466409ad3568ffce0852"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260001_step5000000",
+      "method": "lagrangian",
+      "training_seed": 260001,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "a89632d95692c81422a0f9b8f8fb0d2842db83b8266d990948834b2bbbff403c",
+      "milestone_manifest_sha256": "290d8ae1969c9ac08fe538e654e8632134f853ebd8e5860ed267865b15254103",
+      "checkpoint_sha256": {
+        "actor.pt": "c5a21ea2c44b247610ec951101f75348f0638eecdb32fd5e3e21e078364342ac",
+        "critic.pt": "f84320b6af14ca91a47cffea283114d8a67d605e8edcd3bb29d6af1c7be44b21"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260002_step1000000",
+      "method": "lagrangian",
+      "training_seed": 260002,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "0f88b53cf4855f9443cf33fac8f09bf92bb4b19681224b7b9cf2544372b5810b",
+      "milestone_manifest_sha256": "6e432c4f9c23fd1c83e35b63c196fa5e1fcc044131bc959e8f6052b75d44debc",
+      "checkpoint_sha256": {
+        "actor.pt": "65084db1a2a66555412f2939eb8cb6dc02fbbe229968a777d4d0b0e55c23d20f",
+        "critic.pt": "eae8ff07db8f797e23ca3333ff59ed210c1129635be15e9a7b47e76725cb3967"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260002_step3000000",
+      "method": "lagrangian",
+      "training_seed": 260002,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "0f88b53cf4855f9443cf33fac8f09bf92bb4b19681224b7b9cf2544372b5810b",
+      "milestone_manifest_sha256": "8ba21f207aa253280bbb6f4c2d15a1703f9ce75b83dc4f2e2edd594a455bf4c2",
+      "checkpoint_sha256": {
+        "actor.pt": "08d74e1cb5cd29d941372886af562e75583e8dc867c0751b4eaeb36ea92bf8b9",
+        "critic.pt": "6f080d465a7464b633ff57c95700b654f03e617c8b5413c2e0dbf5d3956507d2"
+      }
+    },
+    {
+      "variant": "fair_lagrangian_train260002_step5000000",
+      "method": "lagrangian",
+      "training_seed": 260002,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mappo_lagrangian",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "0f88b53cf4855f9443cf33fac8f09bf92bb4b19681224b7b9cf2544372b5810b",
+      "milestone_manifest_sha256": "268fd88cbaf92a72ec15119713320ba282715ab014828a8e0e3054a51b70589c",
+      "checkpoint_sha256": {
+        "actor.pt": "b19a0b4a7a73536e279bf24a79b7063a40e66ac1e02fa7602822cd6b14e5b5f0",
+        "critic.pt": "8907d35e8eea50a4352b7430f6b569f338f8d83848983a4305f7ee917eeb6b5d"
+      }
+    },
+    {
+      "variant": "fair_mat_train260000_step1000000",
+      "method": "mat",
+      "training_seed": 260000,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "ed8946f4aeffaf9b6916a4297050e8054c73290536d83cd0c6bae5d3671822f7",
+      "milestone_manifest_sha256": "bc04af50943c7fbc6890c4ceb226f80009fddde9ccc4bc44ba1a110735657dc9",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "d3232d113196362a1e034d2c56ecd600a19511286163eeb151f27dfa51b4b465"
+      }
+    },
+    {
+      "variant": "fair_mat_train260000_step3000000",
+      "method": "mat",
+      "training_seed": 260000,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "ed8946f4aeffaf9b6916a4297050e8054c73290536d83cd0c6bae5d3671822f7",
+      "milestone_manifest_sha256": "ac3c711ae61df7b10e0cfffd0fda9995100681e38433b80597434ffc4b6afc7e",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "6cd60a74b8d4bb66296f7b09b30943c9be10f43a5483632144e79bbbd9998c62"
+      }
+    },
+    {
+      "variant": "fair_mat_train260000_step5000000",
+      "method": "mat",
+      "training_seed": 260000,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "run_config_sha256": "ed8946f4aeffaf9b6916a4297050e8054c73290536d83cd0c6bae5d3671822f7",
+      "milestone_manifest_sha256": "ffe6f09e4c288e933753e5c2ea7e0faf184f5183a391e9bafcbd15f14728589d",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "5c0f8cd3a014eac02949e5fb8a33464e1e1534459ab00137bb910a4bd3b2d735"
+      }
+    },
+    {
+      "variant": "fair_mat_train260001_step1000000",
+      "method": "mat",
+      "training_seed": 260001,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+      "milestone_manifest_sha256": "c74fdb822910a3e71ef7031d0889cf5ba5f9a77d09bddd7af007f211da47c494",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "a09b4f1fb5af7d3f2600ee2a5a11cf2cd653e527485e898344216464fd503396"
+      }
+    },
+    {
+      "variant": "fair_mat_train260001_step3000000",
+      "method": "mat",
+      "training_seed": 260001,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+      "milestone_manifest_sha256": "6d64f46ea9ec5959c03c8e1a21af0640968371ebba92cf18502404c701177234",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "13ee90d075314867acb65ff99e39521b132569f76e161b2b51bbd1f28ca36bd1"
+      }
+    },
+    {
+      "variant": "fair_mat_train260001_step5000000",
+      "method": "mat",
+      "training_seed": 260001,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "run_config_sha256": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+      "milestone_manifest_sha256": "fc8569b92394ac2ef19f2c0c706fb292441b34a65778b19844e41b1ae1126663",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "445e4dc3f5df6d0728bff9e72d99fc33802fa542cd34411a02765b5b0f0eab80"
+      }
+    },
+    {
+      "variant": "fair_mat_train260002_step1000000",
+      "method": "mat",
+      "training_seed": 260002,
+      "budget_steps": 1000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "94ffe7aaaa0da05556ba6c487c6c09bc333b8190acc55c954d98ddcf81bcdb74",
+      "milestone_manifest_sha256": "9cdded8ae8d9ced52957ef0b3db3ed7f81b79e22d19261df4d9e61270934d571",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "27fd476b4b7017de5214f52627b8fb2691778f16a7671daedece7d75f233e425"
+      }
+    },
+    {
+      "variant": "fair_mat_train260002_step3000000",
+      "method": "mat",
+      "training_seed": 260002,
+      "budget_steps": 3000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "94ffe7aaaa0da05556ba6c487c6c09bc333b8190acc55c954d98ddcf81bcdb74",
+      "milestone_manifest_sha256": "af85d376693bb0f672fb7f0fc3b4d6e53dec98818cc7ce10d9f9c2dd49dc571a",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "35289ad7c95562c6a0fc854a53e28755e4817751a39692123745711192b42c99"
+      }
+    },
+    {
+      "variant": "fair_mat_train260002_step5000000",
+      "method": "mat",
+      "training_seed": 260002,
+      "budget_steps": 5000000,
+      "family": "onpolicy",
+      "algorithm": "mat",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "run_config_sha256": "94ffe7aaaa0da05556ba6c487c6c09bc333b8190acc55c954d98ddcf81bcdb74",
+      "milestone_manifest_sha256": "48ef32da25dc40b00b6739107efd70bb938d677a90ef917b0305b6ab3418aab8",
+      "checkpoint_sha256": {
+        "transformer_0.pt": "7eb2f1a217b1d26059bcf1fc64ceff340013c002a1d7c24ff22d1170c1e7750f"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260000_step1000000",
+      "method": "hatrpo",
+      "training_seed": 260000,
+      "budget_steps": 1000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "fd2abe51fa289f0985ab5d89e1cc2bb93942861457d88904662a92a9a856ab1b",
+      "milestone_manifest_sha256": "98b1b67aaa462fc194a4c102615de43dd887e5b972035a6c0a9535e8d424484f",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent1.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent2.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent3.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent4.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent5.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent6.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "actor_agent7.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+        "critic_agent.pt": "bbda9f1d9149801c56d0d4056c6bd331587fb66de54aad5b48c96d59354f2e0b",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260000_step3000000",
+      "method": "hatrpo",
+      "training_seed": 260000,
+      "budget_steps": 3000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "fd2abe51fa289f0985ab5d89e1cc2bb93942861457d88904662a92a9a856ab1b",
+      "milestone_manifest_sha256": "c238c3c2371e18719565c9efea82f8a1f206df21d4ca4ea7e444709e034a5c2b",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent1.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent2.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent3.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent4.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent5.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent6.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "actor_agent7.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+        "critic_agent.pt": "0aa09517c028820f0200638d78a181fcd5628c0eeea75616675b973a79b22b4e",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260000_step5000000",
+      "method": "hatrpo",
+      "training_seed": 260000,
+      "budget_steps": 5000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "fd2abe51fa289f0985ab5d89e1cc2bb93942861457d88904662a92a9a856ab1b",
+      "milestone_manifest_sha256": "9c084186727a252ba5fa6f1c54dc49c9dc1062c7bf768bb33cf92409150ba24a",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent1.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent2.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent3.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent4.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent5.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent6.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "actor_agent7.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+        "critic_agent.pt": "084bfcfcb32451413b6490f842d18108ff548f8e0a9e6d8e470224737a703b35",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260001_step1000000",
+      "method": "hatrpo",
+      "training_seed": 260001,
+      "budget_steps": 1000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "0bf1b1ffc8642aee74620853af98459773d6f13fa41f286757c263ea925a8b76",
+      "milestone_manifest_sha256": "558165ea64d6760569820cdd27f4f72d42310aa5c380eab1cc06d83722bcfee8",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent1.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent2.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent3.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent4.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent5.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent6.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "actor_agent7.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+        "critic_agent.pt": "f33f82257825a2354fce3ed982c26f92ef31dc432489eb0eb4f277018d13283a",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260001_step3000000",
+      "method": "hatrpo",
+      "training_seed": 260001,
+      "budget_steps": 3000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "0bf1b1ffc8642aee74620853af98459773d6f13fa41f286757c263ea925a8b76",
+      "milestone_manifest_sha256": "78a5f97c87e2dd1629e4150e8995dbb61cdad9c6ff802cf8602613a505ac0c2c",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent1.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent2.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent3.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent4.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent5.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent6.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "actor_agent7.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+        "critic_agent.pt": "41b0f9fdf228411da20ca5b7540eb6d4530fa6c576a7c074461248561a6ad1f6",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260001_step5000000",
+      "method": "hatrpo",
+      "training_seed": 260001,
+      "budget_steps": 5000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "0bf1b1ffc8642aee74620853af98459773d6f13fa41f286757c263ea925a8b76",
+      "milestone_manifest_sha256": "b31e63e3dd6ea24edc168935827d3e86a794b9db22e1a1f9753f9b85079dad7d",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent1.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent2.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent3.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent4.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent5.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent6.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "actor_agent7.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+        "critic_agent.pt": "3e37902bfd1dc659a8c84eda8b556fef0976c206eb846252e6a7cee226c84eaf",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260002_step1000000",
+      "method": "hatrpo",
+      "training_seed": 260002,
+      "budget_steps": 1000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "ad768e5ef176494a444c98db05f1809c333e43330cc84486dec3ff4a56e82c35",
+      "milestone_manifest_sha256": "93d9b5d12ac26bf49b570770aa26864fba46659ac8b7f76b16c45aae2c28a1ff",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent1.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent2.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent3.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent4.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent5.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent6.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "actor_agent7.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+        "critic_agent.pt": "b16c54ed559fea3475284319b1c5b2d509a7d1f5bbdf371857ed5052910ca949",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260002_step3000000",
+      "method": "hatrpo",
+      "training_seed": 260002,
+      "budget_steps": 3000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "ad768e5ef176494a444c98db05f1809c333e43330cc84486dec3ff4a56e82c35",
+      "milestone_manifest_sha256": "6425f37ef2b2bd3d0f63e81ccaa09f2dd1cde5ce408ecbecc0ec3ce3f4e1d783",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent1.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent2.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent3.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent4.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent5.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent6.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "actor_agent7.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+        "critic_agent.pt": "f47aa2097a0b8223739e86ae9c5b3138b4c95e2e60c869d1d21de08b984c69c2",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    },
+    {
+      "variant": "fair_hatrpo_train260002_step5000000",
+      "method": "hatrpo",
+      "training_seed": 260002,
+      "budget_steps": 5000000,
+      "family": "harl",
+      "algorithm": "hatrpo",
+      "run_config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/config.json",
+      "run_config_sha256": "ad768e5ef176494a444c98db05f1809c333e43330cc84486dec3ff4a56e82c35",
+      "milestone_manifest_sha256": "bc94a6fa0f97dcb91e4dd6718eb3909f0798dff121de23a26b3dc5a73bedbe0c",
+      "checkpoint_sha256": {
+        "actor_agent0.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent1.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent2.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent3.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent4.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent5.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent6.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "actor_agent7.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+        "critic_agent.pt": "49ad692fd76adfb4a377d9633da4a919bc88fc34203d5d2ab896a6bd029924f5",
+        "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+      }
+    }
+  ]
+}

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import random
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -49,6 +50,18 @@ class QuadSwarmAdapterConfig:
     liveness_goal_speed: float = 0.5
     liveness_goal_dwell_steps: int = 10
     shared_goal_slot_radius: float = 0.0
+    agent_collision_reward: float = 0.0
+    fair_hierarchy: bool = False
+    fair_randomize_episode_resets: bool = False
+    fair_staging_radius: float = 1.20
+    fair_staging_ready_radius: float = 0.30
+    fair_egress_radius: float = 1.20
+    fair_max_staging_frames: int = 350
+    fair_waypoint_clearance_buffer: float = 0.35
+    fair_waypoint_grid_resolution: float = 0.25
+    fair_waypoint_room_margin: float = 0.15
+    fair_waypoint_reached_radius: float = 0.30
+    fair_waypoint_replan_interval: int = 25
 
 
 def compute_liveness_progress_reward(
@@ -181,7 +194,7 @@ def build_sample_factory_cfg(config: QuadSwarmAdapterConfig):
         quads_neighbor_hidden_size=config.neighbor_hidden_size,
         quads_collision_hitbox_radius=2.0,
         quads_collision_falloff_radius=-1.0,
-        quads_collision_reward=0.0,
+        quads_collision_reward=config.agent_collision_reward,
         quads_collision_smooth_max_penalty=10.0,
         quads_obst_collision_reward=5.0 if config.use_obstacles else 0.0,
         quads_use_obstacles=config.use_obstacles,
@@ -264,6 +277,34 @@ class QuadSwarmHARLEnv:
             liveness_goal_speed=float(args.get("liveness_goal_speed", 0.5)),
             liveness_goal_dwell_steps=int(args.get("liveness_goal_dwell_steps", 10)),
             shared_goal_slot_radius=float(args.get("shared_goal_slot_radius", 0.0)),
+            agent_collision_reward=float(args.get("agent_collision_reward", 0.0)),
+            fair_hierarchy=bool(args.get("fair_hierarchy", False)),
+            fair_randomize_episode_resets=bool(
+                args.get("fair_randomize_episode_resets", False)
+            ),
+            fair_staging_radius=float(args.get("fair_staging_radius", 1.20)),
+            fair_staging_ready_radius=float(
+                args.get("fair_staging_ready_radius", 0.30)
+            ),
+            fair_egress_radius=float(args.get("fair_egress_radius", 1.20)),
+            fair_max_staging_frames=int(
+                args.get("fair_max_staging_frames", 350)
+            ),
+            fair_waypoint_clearance_buffer=float(
+                args.get("fair_waypoint_clearance_buffer", 0.35)
+            ),
+            fair_waypoint_grid_resolution=float(
+                args.get("fair_waypoint_grid_resolution", 0.25)
+            ),
+            fair_waypoint_room_margin=float(
+                args.get("fair_waypoint_room_margin", 0.15)
+            ),
+            fair_waypoint_reached_radius=float(
+                args.get("fair_waypoint_reached_radius", 0.30)
+            ),
+            fair_waypoint_replan_interval=int(
+                args.get("fair_waypoint_replan_interval", 25)
+            ),
         )
         if config.liveness_progress_weight < 0.0:
             raise ValueError("liveness_progress_weight must be nonnegative")
@@ -281,6 +322,27 @@ class QuadSwarmHARLEnv:
             raise ValueError("liveness_goal_dwell_steps must be positive")
         if config.shared_goal_slot_radius < 0.0:
             raise ValueError("shared_goal_slot_radius must be nonnegative")
+        if config.agent_collision_reward < 0.0:
+            raise ValueError("agent_collision_reward must be nonnegative")
+        if config.fair_hierarchy:
+            if config.shared_goal_slot_radius <= 0.0:
+                raise ValueError("fair_hierarchy requires nonzero shared-goal slots")
+            if min(config.fair_staging_radius, config.fair_egress_radius) <= 0.5:
+                raise ValueError("fair staging and egress radii must exceed 0.5 m")
+            if config.fair_staging_ready_radius <= 0.0:
+                raise ValueError("fair_staging_ready_radius must be positive")
+            if config.fair_max_staging_frames < 1:
+                raise ValueError("fair_max_staging_frames must be positive")
+            if min(
+                config.fair_waypoint_clearance_buffer,
+                config.fair_waypoint_room_margin,
+                config.fair_waypoint_reached_radius,
+            ) < 0.0:
+                raise ValueError("fair waypoint clearances and radii must be nonnegative")
+            if config.fair_waypoint_grid_resolution <= 0.0:
+                raise ValueError("fair_waypoint_grid_resolution must be positive")
+            if config.fair_waypoint_replan_interval < 1:
+                raise ValueError("fair_waypoint_replan_interval must be positive")
         self.config = config
         self.cfg = build_sample_factory_cfg(config)
         self.env = make_quadrotor_env_multi(self.cfg)
@@ -296,6 +358,10 @@ class QuadSwarmHARLEnv:
         self._goal_dwell_steps = np.zeros(self.n_agents, dtype=np.int32)
         self._arrival_awarded = np.zeros(self.n_agents, dtype=bool)
         self.policy_goal_slot_offsets = np.zeros((self.n_agents, 3), dtype=np.float32)
+        self._episode_reset_count = 0
+        self._fair_coordinator = None
+        self._fair_active_targets = np.zeros((self.n_agents, 3), dtype=np.float32)
+        self._fair_canonical_reached = np.zeros(self.n_agents, dtype=bool)
         self.seed(config.seed)
 
     def _assign_policy_goal_slots(self) -> None:
@@ -316,6 +382,169 @@ class QuadSwarmHARLEnv:
 
     def _policy_observation(self, obs) -> np.ndarray:
         return apply_policy_goal_slot_offsets(obs, self.policy_goal_slot_offsets)
+
+    def _physical_goals(self) -> np.ndarray:
+        base_env = self.env.unwrapped
+        goals = [
+            np.asarray(single_env.goal, dtype=np.float32)
+            for single_env in getattr(base_env, "envs", [])
+            if hasattr(single_env, "goal")
+        ]
+        if len(goals) != self.n_agents:
+            return np.full((self.n_agents, 3), np.nan, dtype=np.float32)
+        return np.asarray(goals, dtype=np.float32)
+
+    def _positions_and_velocities(self) -> Tuple[np.ndarray, np.ndarray]:
+        base_env = self.env.unwrapped
+        positions = np.asarray(
+            getattr(base_env, "pos", np.full((self.n_agents, 3), np.nan)),
+            dtype=np.float32,
+        )
+        velocities = np.asarray(
+            getattr(base_env, "vel", np.full_like(positions, np.nan)),
+            dtype=np.float32,
+        )
+        return positions, velocities
+
+    def _build_fair_coordinator(self):
+        # Imported lazily because the coordinator's evaluation helpers import
+        # this adapter. Construction happens only after module initialization.
+        from quad_swarm_goal_flow_teacher import SynchronizedStageEgressCoordinator
+        from quad_swarm_obstacle_waypoint_router import ObstacleWaypointRouter
+
+        router = ObstacleWaypointRouter(
+            clearance_buffer=self.config.fair_waypoint_clearance_buffer,
+            grid_resolution=self.config.fair_waypoint_grid_resolution,
+            room_margin=self.config.fair_waypoint_room_margin,
+            reached_radius=self.config.fair_waypoint_reached_radius,
+            replan_interval=self.config.fair_waypoint_replan_interval,
+        )
+        return SynchronizedStageEgressCoordinator(
+            staging_radius=self.config.fair_staging_radius,
+            staging_ready_radius=self.config.fair_staging_ready_radius,
+            egress_radius=self.config.fair_egress_radius,
+            max_staging_frames=self.config.fair_max_staging_frames,
+            waypoint_router=router,
+        )
+
+    def _fair_policy_observation(self, obs, targets: np.ndarray) -> np.ndarray:
+        transformed = self._policy_observation(obs)
+        targets = np.asarray(targets, dtype=np.float32)
+        goals = self._physical_goals()
+        if targets.shape != (self.n_agents, 3) or goals.shape != targets.shape:
+            raise ValueError("Fair hierarchy targets and goals must have shape (N, 3)")
+        # Undo the stable slot transform, then replace the relative goal with
+        # the active A* waypoint or phase target used by the reward.
+        transformed[:, :3] += self.policy_goal_slot_offsets
+        transformed[:, :3] -= targets - goals
+        return transformed
+
+    def _distance_and_speed_to_targets(
+        self, targets: np.ndarray
+    ) -> Tuple[np.ndarray, np.ndarray]:
+        positions, velocities = self._positions_and_velocities()
+        targets = np.asarray(targets, dtype=np.float32)
+        if positions.shape != targets.shape:
+            return (
+                np.full(self.n_agents, np.nan, dtype=np.float32),
+                np.full(self.n_agents, np.nan, dtype=np.float32),
+            )
+        return (
+            np.linalg.norm(positions - targets, axis=1).astype(np.float32),
+            np.linalg.norm(velocities, axis=1).astype(np.float32),
+        )
+
+    def _update_fair_canonical_reached(self, collision_frame: bool) -> np.ndarray:
+        center_distance, speed = self._goal_distance_and_speed()
+        inside_goal = (
+            np.isfinite(center_distance)
+            & np.isfinite(speed)
+            & (center_distance <= self.config.liveness_goal_radius)
+            & (speed <= self.config.liveness_goal_speed)
+        )
+        self._goal_dwell_steps = np.where(
+            inside_goal,
+            self._goal_dwell_steps + 1,
+            0,
+        ).astype(np.int32)
+        newly_reached = (
+            (self._goal_dwell_steps >= self.config.liveness_goal_dwell_steps)
+            & ~self._fair_canonical_reached
+        )
+        if collision_frame:
+            newly_reached.fill(False)
+        self._fair_canonical_reached |= newly_reached
+        return newly_reached
+
+    def _fair_position_reward_correction(
+        self,
+        target_distance: np.ndarray,
+        infos,
+    ) -> np.ndarray:
+        correction = np.zeros(self.n_agents, dtype=np.float32)
+        base_env = self.env.unwrapped
+        info_rows = infos if isinstance(infos, (list, tuple)) else []
+        single_envs = list(getattr(base_env, "envs", []))
+        for index in range(min(self.n_agents, len(info_rows), len(single_envs))):
+            info = info_rows[index]
+            if not isinstance(info, dict) or not np.isfinite(target_distance[index]):
+                continue
+            reward_parts = info.setdefault("rewards", {})
+            single_env = single_envs[index]
+            dt = float(getattr(single_env, "dt", getattr(base_env, "control_dt", 0.01)))
+            position_weight = float(
+                getattr(single_env, "rew_coeff", {}).get("pos", 1.0)
+            )
+            native_position = float(reward_parts.get("rew_pos", 0.0))
+            target_position = -dt * position_weight * float(target_distance[index])
+            correction[index] = target_position - native_position
+            reward_parts["rew_fair_target_position_correction"] = float(
+                correction[index]
+            )
+            reward_parts["rew_pos"] = target_position
+            reward_parts["rew_main"] = target_position
+            reward_parts["rewraw_pos"] = -float(target_distance[index])
+            reward_parts["rewraw_main"] = -float(target_distance[index])
+            reward_parts["fair_position_reward_target"] = 1.0
+        return correction
+
+    def _shape_fair_hierarchy_rewards(
+        self,
+        rewards,
+        infos,
+        targets: np.ndarray,
+    ) -> np.ndarray:
+        rewards_array = np.asarray(rewards, dtype=np.float32).reshape(self.n_agents)
+        target_distance, _speed = self._distance_and_speed_to_targets(targets)
+        collision_frame = self._collision_frame(infos)
+        position_correction = self._fair_position_reward_correction(
+            target_distance,
+            infos,
+        )
+        progress_reward = compute_liveness_progress_reward(
+            self._previous_goal_distance,
+            target_distance,
+            weight=self.config.liveness_progress_weight,
+            team_mix=self.config.liveness_team_mix,
+            progress_clip=self.config.liveness_progress_clip,
+            collision_frame=collision_frame,
+        )
+        newly_reached = self._update_fair_canonical_reached(collision_frame)
+        arrival_reward = (
+            self.config.liveness_arrival_bonus * newly_reached.astype(np.float32)
+        )
+        self._arrival_awarded |= newly_reached
+        self._previous_goal_distance = target_distance
+
+        info_rows = infos if isinstance(infos, (list, tuple)) else []
+        for index, info in enumerate(info_rows):
+            if not isinstance(info, dict):
+                continue
+            reward_parts = info.setdefault("rewards", {})
+            reward_parts["rew_liveness_progress"] = float(progress_reward[index])
+            reward_parts["rew_liveness_arrival"] = float(arrival_reward[index])
+            reward_parts["fair_hierarchy_reward"] = 1.0
+        return rewards_array + position_correction + progress_reward + arrival_reward
 
     def _goal_distance_and_speed(self) -> Tuple[np.ndarray, np.ndarray]:
         base_env = self.env.unwrapped
@@ -402,18 +631,63 @@ class QuadSwarmHARLEnv:
         return shaped
 
     def reset(self):
-        obs, _info = self.env.reset(seed=self.config.seed)
-        self._previous_goal_distance, _speed = self._goal_distance_and_speed()
+        reset_seed = self.config.seed
+        if self.config.fair_randomize_episode_resets and self._episode_reset_count > 0:
+            reset_seed = None
+        obs, _info = self.env.reset(seed=reset_seed)
+        self._episode_reset_count += 1
         self._goal_dwell_steps.fill(0)
         self._arrival_awarded.fill(False)
         self._assign_policy_goal_slots()
-        obs = self._policy_observation(obs)
+        if self.config.fair_hierarchy:
+            self._fair_canonical_reached.fill(False)
+            self._fair_coordinator = self._build_fair_coordinator()
+            self._fair_coordinator.reset(self)
+            self._fair_active_targets = self._fair_coordinator.active_targets(
+                self,
+                self._fair_canonical_reached,
+            )
+            self._previous_goal_distance, _speed = self._distance_and_speed_to_targets(
+                self._fair_active_targets
+            )
+            obs = self._fair_policy_observation(obs, self._fair_active_targets)
+        else:
+            self._previous_goal_distance, _speed = self._goal_distance_and_speed()
+            obs = self._policy_observation(obs)
         return obs, _global_state_from_obs(obs), self.get_avail_actions()
 
     def step(self, actions):
         obs, rewards, terminated, truncated, infos = self.env.step(actions)
-        obs = self._policy_observation(obs)
-        rewards = self._shape_liveness_rewards(rewards, infos).reshape(self.n_agents, 1)
+        if self.config.fair_hierarchy:
+            if self._fair_coordinator is None:
+                raise RuntimeError("Fair hierarchy must be reset before stepping")
+            current_targets = self._fair_active_targets.copy()
+            rewards = self._shape_fair_hierarchy_rewards(
+                rewards,
+                infos,
+                current_targets,
+            ).reshape(self.n_agents, 1)
+            next_targets = self._fair_coordinator.active_targets(
+                self,
+                self._fair_canonical_reached,
+            )
+            target_changed = bool(
+                np.any(np.linalg.norm(next_targets - current_targets, axis=1) > 1e-6)
+            )
+            self._fair_active_targets = np.asarray(
+                next_targets,
+                dtype=np.float32,
+            ).copy()
+            if target_changed:
+                self._previous_goal_distance, _speed = self._distance_and_speed_to_targets(
+                    self._fair_active_targets
+                )
+            obs = self._fair_policy_observation(obs, self._fair_active_targets)
+        else:
+            obs = self._policy_observation(obs)
+            rewards = self._shape_liveness_rewards(rewards, infos).reshape(
+                self.n_agents, 1
+            )
         dones = _done_array(terminated, truncated, self.n_agents)
         if isinstance(infos, tuple):
             infos = list(infos)
@@ -425,6 +699,8 @@ class QuadSwarmHARLEnv:
     def seed(self, seed: int):
         seed = int(seed)
         self.config.seed = seed
+        random.seed(seed)
+        np.random.seed(seed)
         seed_numba_rng(seed)
         base_env = self.env.unwrapped
         if hasattr(base_env, "envs"):

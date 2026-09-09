@@ -8,8 +8,8 @@ The final method separates global liveness coordination from bounded low-level c
 
 ```text
 physical state + obstacles
-        -> A* route and visible waypoint
         -> synchronized stage/enter/goal/egress state
+        -> A* route and visible waypoint for the current phase target
         -> waypoint-conditioned observation
         -> one bounded BC controller
         -> four motor commands
@@ -101,7 +101,7 @@ Hidden widths are `256`, `256`, and `128`. The four outputs satisfy `u_i in [-1,
 Given teacher actions `u_n^T`, behavioral cloning minimizes
 
 ```text
-L_BC(theta) = (1/M) sum_n || pi_theta(o_n^w) - u_n^T ||_2^2.
+L_BC(theta) = (1/(4M)) sum_n || pi_theta(o_n^w) - u_n^T ||_2^2.
 ```
 
 The final dataset has 179,456 training labels from seeds `160000..160031` and 22,432 validation labels from seeds `161000..161003`. Adam uses learning rate `1e-3`, batch size `4096`, and 60 epochs. The three formal training seeds are `171001`, `171002`, and `171003`.
@@ -111,8 +111,8 @@ The final dataset has 179,456 training labels from seeds `160000..160031` and 22
 For each simulator frame:
 
 1. Read physical state and obstacle geometry.
-2. Replan an agent route when the 25-frame condition or invalidation condition fires.
-3. Update the synchronized stage-enter-goal-egress state machine.
+2. Update the synchronized stage-enter-goal-egress state machine and phase target.
+3. Replan to that target when it changes or the 25-frame condition fires.
 4. Select the active route, staging, goal, or egress waypoint.
 5. Replace goal-relative observation fields with waypoint displacement.
 6. Evaluate the single bounded controller once per agent.

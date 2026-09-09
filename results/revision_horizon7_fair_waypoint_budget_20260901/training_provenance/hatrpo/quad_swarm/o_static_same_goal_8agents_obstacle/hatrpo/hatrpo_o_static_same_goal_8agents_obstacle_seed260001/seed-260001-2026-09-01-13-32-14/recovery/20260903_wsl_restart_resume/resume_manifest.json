@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-09-03T07:16:29.682464+00:00",
+  "reason": "wsl_restart",
+  "framework": "harl",
+  "method": "hatrpo",
+  "training_seed": 260001,
+  "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14",
+  "resume_step": 896000,
+  "total_steps": 5000000,
+  "config_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/config.json",
+  "config_sha256": "0bf1b1ffc8642aee74620853af98459773d6f13fa41f286757c263ea925a8b76",
+  "checkpoint_files": [
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent0.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent0.pt",
+      "sha256": "6928c7d75cb8380b325a408ac2f4dc1c6f9cec2d9fed259e84d8bc85cd795b51",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent1.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent1.pt",
+      "sha256": "81f28114803ddf6e042f04d9ca6992e255ee420798a198e799da9c9d52e2d3a3",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent2.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent2.pt",
+      "sha256": "9e84622509036b8b976792370ef441bf0680f1d1a0567958e68e74f9f96e0a79",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent3.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent3.pt",
+      "sha256": "3c08de6a31396a380e51a585a0a95dd0edd2142c4de9e04140a487e3c64d6678",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent4.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent4.pt",
+      "sha256": "84ff69965044f91e1ab7904e80c0b590705407ffa2ff8180b4f48aeaa1325804",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent5.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent5.pt",
+      "sha256": "d74cdc24505eab72213596e272bfa45a504e5b2d250cb8ff0630b5624e8c79f9",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent6.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent6.pt",
+      "sha256": "b81b092dd21d0d2847f3ba70207562052c59a34b5257f96d4ea9ce1e668f3af7",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/actor_agent7.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/actor_agent7.pt",
+      "sha256": "963c272a5e33d94faf7d45cd78d385962b4bd508dd1652dd2ab756c0d8ad6994",
+      "bytes": 96347
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/critic_agent.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/critic_agent.pt",
+      "sha256": "4bf3cd5a85cce58c2656f84ac0315d88fac83f6eff70c2a316f47b85ad514475",
+      "bytes": 236377
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/models/value_normalizer.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/recovery/20260903_wsl_restart_resume/source_models/value_normalizer.pt",
+      "sha256": "6ad064ecf635b45d352c14fc8592cb7f3a50a405bcae15c7420ded8f054b46ba",
+      "bytes": 1379
+    }
+  ],
+  "lagrangian_multiplier": null,
+  "restored_state": {
+    "model_weights": true,
+    "value_normalizer": true,
+    "lagrangian_multiplier": false,
+    "optimizer": false,
+    "process_rng": false,
+    "environment_rng": false
+  },
+  "limitations": [
+    "The legacy checkpoint did not contain optimizer state.",
+    "The legacy checkpoint did not contain process or environment RNG state.",
+    "Legacy on-policy checkpoints did not contain ValueNorm state.",
+    "Subsequent checkpoints include restartable training_state.pt files."
+  ]
+}

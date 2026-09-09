@@ -7,6 +7,7 @@ ONPOLICY="$BASE/repos/baseline_candidates/on-policy"
 PY="${PY:-${PYTHON:-python}}"
 
 TRAIN_STEPS="${TRAIN_STEPS:-1000000}"
+MILESTONE_STEPS="${MILESTONE_STEPS:-}"
 EVAL_EPISODES="${EVAL_EPISODES:-100}"
 EVAL_MAX_STEPS_PER_EPISODE="${EVAL_MAX_STEPS_PER_EPISODE:-500}"
 SEEDS="${SEEDS:-0 1111 2222 3333}"
@@ -47,6 +48,18 @@ LIVENESS_GOAL_DWELL_STEPS="${LIVENESS_GOAL_DWELL_STEPS:-10}"
 OBSTACLE_DENSITY="${OBSTACLE_DENSITY:-0.2}"
 OBSTACLE_SIZE="${OBSTACLE_SIZE:-0.6}"
 SHARED_GOAL_SLOT_RADIUS="${SHARED_GOAL_SLOT_RADIUS:-0.0}"
+AGENT_COLLISION_REWARD="${AGENT_COLLISION_REWARD:-0.0}"
+FAIR_HIERARCHY="${FAIR_HIERARCHY:-False}"
+FAIR_RANDOMIZE_EPISODE_RESETS="${FAIR_RANDOMIZE_EPISODE_RESETS:-False}"
+FAIR_STAGING_RADIUS="${FAIR_STAGING_RADIUS:-1.20}"
+FAIR_STAGING_READY_RADIUS="${FAIR_STAGING_READY_RADIUS:-0.30}"
+FAIR_EGRESS_RADIUS="${FAIR_EGRESS_RADIUS:-1.20}"
+FAIR_MAX_STAGING_FRAMES="${FAIR_MAX_STAGING_FRAMES:-350}"
+FAIR_WAYPOINT_CLEARANCE_BUFFER="${FAIR_WAYPOINT_CLEARANCE_BUFFER:-0.35}"
+FAIR_WAYPOINT_GRID_RESOLUTION="${FAIR_WAYPOINT_GRID_RESOLUTION:-0.25}"
+FAIR_WAYPOINT_ROOM_MARGIN="${FAIR_WAYPOINT_ROOM_MARGIN:-0.15}"
+FAIR_WAYPOINT_REACHED_RADIUS="${FAIR_WAYPOINT_REACHED_RADIUS:-0.30}"
+FAIR_WAYPOINT_REPLAN_INTERVAL="${FAIR_WAYPOINT_REPLAN_INTERVAL:-25}"
 
 CUDA_ARGS=()
 if [[ "$USE_CUDA" == "0" || "$USE_CUDA" == "false" || "$USE_CUDA" == "False" ]]; then
@@ -56,6 +69,12 @@ fi
 MODEL_ARGS=()
 if [[ -n "$MODEL_DIR" ]]; then
   MODEL_ARGS+=(--model_dir "$MODEL_DIR")
+fi
+
+MILESTONE_ARGS=()
+if [[ -n "${MILESTONE_STEPS// }" ]]; then
+  read -r -a milestone_values <<< "$MILESTONE_STEPS"
+  MILESTONE_ARGS+=(--milestone_steps "${milestone_values[@]}")
 fi
 
 MAT_ARGS=(--n_block "$N_BLOCK" --n_embd "$N_EMBD" --n_head "$N_HEAD")
@@ -132,6 +151,18 @@ train_one() {
       --liveness_goal_speed "$LIVENESS_GOAL_SPEED" \
       --liveness_goal_dwell_steps "$LIVENESS_GOAL_DWELL_STEPS" \
       --shared_goal_slot_radius "$SHARED_GOAL_SLOT_RADIUS" \
+      --agent_collision_reward "$AGENT_COLLISION_REWARD" \
+      --fair_hierarchy "$FAIR_HIERARCHY" \
+      --fair_randomize_episode_resets "$FAIR_RANDOMIZE_EPISODE_RESETS" \
+      --fair_staging_radius "$FAIR_STAGING_RADIUS" \
+      --fair_staging_ready_radius "$FAIR_STAGING_READY_RADIUS" \
+      --fair_egress_radius "$FAIR_EGRESS_RADIUS" \
+      --fair_max_staging_frames "$FAIR_MAX_STAGING_FRAMES" \
+      --fair_waypoint_clearance_buffer "$FAIR_WAYPOINT_CLEARANCE_BUFFER" \
+      --fair_waypoint_grid_resolution "$FAIR_WAYPOINT_GRID_RESOLUTION" \
+      --fair_waypoint_room_margin "$FAIR_WAYPOINT_ROOM_MARGIN" \
+      --fair_waypoint_reached_radius "$FAIR_WAYPOINT_REACHED_RADIUS" \
+      --fair_waypoint_replan_interval "$FAIR_WAYPOINT_REPLAN_INTERVAL" \
       --lagrangian_cost_type "$LAGRANGIAN_COST_TYPE" \
       --lagrangian_cost_limit "$LAGRANGIAN_COST_LIMIT" \
       --lagrangian_lr "$LAGRANGIAN_LR" \
@@ -141,6 +172,7 @@ train_one() {
       "${CUDA_ARGS[@]}" \
       "${MODEL_ARGS[@]}" \
       "${MAT_ARGS[@]}" \
+      "${MILESTONE_ARGS[@]}" \
       --log_dir "$TRAIN_DIR"
   fi
 

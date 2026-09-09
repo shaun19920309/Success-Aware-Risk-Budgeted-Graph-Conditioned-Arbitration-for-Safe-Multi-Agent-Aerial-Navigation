@@ -26,6 +26,7 @@ class Variant:
     run_dir: Path
     adapted: bool
     requires_complete_log: bool = False
+    synchronized_waypoint: bool = False
 
 
 def latest_dir(pattern: str) -> Path:
@@ -175,9 +176,19 @@ def run_eval(
         str(base_run),
     ]
     if variant.family == "harl":
-        command.extend(["--harl-expert", f"{variant.name}={variant.run_dir}"])
+        expert_flag = (
+            "--synchronized-waypoint-harl-expert"
+            if variant.synchronized_waypoint
+            else "--harl-expert"
+        )
+        command.extend([expert_flag, f"{variant.name}={variant.run_dir}"])
     else:
-        command.extend(["--onpolicy-expert", f"{variant.name}={variant.run_dir}"])
+        expert_flag = (
+            "--synchronized-waypoint-onpolicy-expert"
+            if variant.synchronized_waypoint
+            else "--onpolicy-expert"
+        )
+        command.extend([expert_flag, f"{variant.name}={variant.run_dir}"])
     command.extend(
         [
             "--efficiency-experts",

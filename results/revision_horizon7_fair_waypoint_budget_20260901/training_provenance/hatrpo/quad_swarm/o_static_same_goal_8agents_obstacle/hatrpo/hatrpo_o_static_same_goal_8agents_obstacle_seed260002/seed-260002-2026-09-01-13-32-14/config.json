@@ -1,0 +1,127 @@
+{
+    "algo_args":	{
+        "algo":	{
+            "accept_ratio":	0.5,
+            "action_aggregation":	"prod",
+            "backtrack_coeff":	0.8,
+            "clip_param":	0.2,
+            "critic_epoch":	4,
+            "critic_num_mini_batch":	1,
+            "fixed_order":	false,
+            "gae_lambda":	0.95,
+            "gamma":	0.99,
+            "huber_delta":	10.0,
+            "kl_threshold":	0.01,
+            "ls_step":	10,
+            "max_grad_norm":	10.0,
+            "share_param":	true,
+            "use_clipped_value_loss":	true,
+            "use_gae":	true,
+            "use_huber_loss":	true,
+            "use_max_grad_norm":	true,
+            "use_policy_active_masks":	true,
+            "value_loss_coef":	1
+        },
+        "device":	{
+            "cuda":	true,
+            "cuda_deterministic":	true,
+            "torch_threads":	4
+        },
+        "eval":	{
+            "eval_episodes":	20,
+            "n_eval_rollout_threads":	10,
+            "use_eval":	false
+        },
+        "logger":	{
+            "log_dir":	"/home/xzl/sci1_repo/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo"
+        },
+        "model":	{
+            "activation_func":	"relu",
+            "critic_lr":	0.0005,
+            "data_chunk_length":	10,
+            "gain":	0.01,
+            "hidden_sizes":	[
+                128,
+                128
+            ],
+            "initialization_method":	"orthogonal_",
+            "lr":	0.0005,
+            "opti_eps":	1e-05,
+            "recurrent_n":	1,
+            "std_x_coef":	1,
+            "std_y_coef":	0.5,
+            "use_feature_normalization":	true,
+            "use_naive_recurrent_policy":	false,
+            "use_recurrent_policy":	false,
+            "weight_decay":	0
+        },
+        "render":	{
+            "render_episodes":	10,
+            "use_render":	false
+        },
+        "seed":	{
+            "seed":	260002,
+            "seed_specify":	true
+        },
+        "train":	{
+            "episode_length":	128,
+            "eval_interval":	1000,
+            "log_interval":	1,
+            "milestone_steps":	[
+                1000000,
+                3000000,
+                5000000
+            ],
+            "model_dir":	null,
+            "n_rollout_threads":	1,
+            "num_env_steps":	5000000,
+            "use_linear_lr_decay":	false,
+            "use_proper_time_limits":	true,
+            "use_valuenorm":	true
+        }
+    },
+    "env_args":	{
+        "agent_collision_reward":	5.0,
+        "episode_duration":	7.0,
+        "fair_egress_radius":	1.2,
+        "fair_hierarchy":	true,
+        "fair_max_staging_frames":	350,
+        "fair_randomize_episode_resets":	true,
+        "fair_staging_radius":	1.2,
+        "fair_staging_ready_radius":	0.3,
+        "fair_waypoint_clearance_buffer":	0.35,
+        "fair_waypoint_grid_resolution":	0.25,
+        "fair_waypoint_reached_radius":	0.3,
+        "fair_waypoint_replan_interval":	25,
+        "fair_waypoint_room_margin":	0.15,
+        "liveness_arrival_bonus":	0.5,
+        "liveness_goal_dwell_steps":	10,
+        "liveness_goal_radius":	0.5,
+        "liveness_goal_speed":	0.5,
+        "liveness_progress_clip":	0.05,
+        "liveness_progress_weight":	1.0,
+        "liveness_team_mix":	0.5,
+        "neighbor_encoder_type":	"attention",
+        "neighbor_hidden_size":	64,
+        "neighbor_obs_type":	"pos_vel",
+        "num_agents":	8,
+        "obstacle_density":	0.2,
+        "obstacle_size":	0.6,
+        "obstacle_spawn_area":	[
+            8,
+            8
+        ],
+        "quads_mode":	"o_static_same_goal",
+        "seed":	260002,
+        "shared_goal_slot_radius":	0.45,
+        "state_type":	"EP",
+        "use_obstacles":	true,
+        "visible_neighbors":	2
+    },
+    "main_args":	{
+        "algo":	"hatrpo",
+        "env":	"quad_swarm",
+        "exp_name":	"hatrpo_o_static_same_goal_8agents_obstacle_seed260002",
+        "load_config":	""
+    }
+}

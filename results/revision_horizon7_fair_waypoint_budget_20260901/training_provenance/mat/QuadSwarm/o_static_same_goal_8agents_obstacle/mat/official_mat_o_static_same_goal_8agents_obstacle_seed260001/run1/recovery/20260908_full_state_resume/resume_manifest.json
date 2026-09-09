@@ -1,0 +1,57 @@
+{
+  "format_version": 2,
+  "created_at_utc": "2026-09-08T05:43:28.328558+00:00",
+  "reason": "wsl_restart",
+  "status": "ready",
+  "method": "mat",
+  "training_seed": 260001,
+  "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1",
+  "session": "sci1_fair_mat_s260001",
+  "resume_step": 4352128,
+  "total_steps": 5000000,
+  "config_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+  "config_sha256": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+  "manifest_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/recovery/20260908_full_state_resume/resume_manifest.json",
+  "checkpoint_files": [
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/models/transformer_0.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/recovery/20260908_full_state_resume/source_models/transformer_0.pt",
+      "sha256": "e8eeaf97d58d256f3988626bb51e2ee8574ec07f897a67c16aecc9c5e3e5b5da",
+      "bytes": 2370701
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/models/training_state.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/recovery/20260908_full_state_resume/source_models/training_state.pt",
+      "sha256": "dded7132a488b47a5d011c8c24e09ffae14e35460e2f9fcedc1f0364060b9e79",
+      "bytes": 4674041
+    }
+  ],
+  "protected_milestones": {
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000/config.json": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000/milestone_manifest.json": "c74fdb822910a3e71ef7031d0889cf5ba5f9a77d09bddd7af007f211da47c494",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000/models/transformer_0.pt": "a09b4f1fb5af7d3f2600ee2a5a11cf2cd653e527485e898344216464fd503396",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000/config.json": "e227a2b86752a249c816d33b50d9d4a9b6bff4575e7905ba5b97899a49b6f685",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000/milestone_manifest.json": "6d64f46ea9ec5959c03c8e1a21af0640968371ebba92cf18502404c701177234",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000/models/training_state.pt": "eb256953a1d1e8f7357f8603add69233b7d9b27f05a1e83339b0ba89cec23068",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000/models/transformer_0.pt": "13ee90d075314867acb65ff99e39521b132569f76e161b2b51bbd1f28ca36bd1"
+  },
+  "source_code_sha256": {
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/scripts/resume_horizon7_fair_training_state.py": "bcf0c20f1750eb225ebe0a885b567e67354ffb4155a200dc87089af7438bea9b",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/scripts/launch_horizon7_fair_waypoint_budget.sh": "878521b3d51007a1226d0bb1f6866f9553825294d9aa93f8bd93e6c8ad236717",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/repos/baseline_candidates/on-policy/onpolicy/runner/shared/mpe_runner.py": "9b6e5c6f6b81c447b7d06a2c077c970c2239ae19a54bdd692e60a17fcf42a814",
+    "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/repos/baseline_candidates/HARL/harl/runners/on_policy_base_runner.py": "38513e5b5aac7a62f86920d51a813f486c6653c5a6900273414a6a8ba667e732"
+  },
+  "restored_state": {
+    "model_weights": true,
+    "optimizer": true,
+    "value_normalizer": true,
+    "process_rng": true,
+    "environment_rng": false,
+    "rollout_buffer": false
+  },
+  "limitations": [
+    "Simulator state and rollout buffer are not serialized; resume resets the episode.",
+    "Weights/state association is checked by save ordering, modification times and loadability; older files have no embedded cross-hash.",
+    "The earlier legacy resume remains part of this run's provenance."
+  ]
+}

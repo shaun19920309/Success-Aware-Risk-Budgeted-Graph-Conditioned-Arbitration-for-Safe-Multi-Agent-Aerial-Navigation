@@ -19,7 +19,7 @@ def box(axis, xy, width, height, title, detail, color):
         (x, y),
         width,
         height,
-        boxstyle="round,pad=0.012,rounding_size=0.018",
+        boxstyle="round,pad=0.004,rounding_size=0.012",
         linewidth=1.2,
         edgecolor="#24313a",
         facecolor=color,
@@ -78,8 +78,8 @@ def main() -> None:
     colors = ["#e8f1f5", "#e7f2ec", "#f6efd9", "#e8f1f5", "#f5e8e2", "#e7f2ec"]
     labels = [
         ("Swarm state", "positions, velocities,\ngoal slots, obstacle map"),
-        ("Obstacle route", "0.35 m inflation buffer\n0.25 m A* + visibility compression"),
         ("Liveness phases", "stage -> parallel entry\n-> dwell -> radial egress"),
+        ("Obstacle route", "0.35 m inflation buffer\n0.25 m A* grid\nvisibility compression"),
         ("Conditioning", "local observation +\nactive 3-D waypoint"),
         ("Bounded controller", "MLP 256--256--128, SiLU\n$tanh$ four-motor output"),
         ("Quadrotor plant", "clipped motor command\nnonlinear simulator dynamics"),

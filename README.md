@@ -1,151 +1,74 @@
 # Liveness-Aware Obstacle-Waypoint Coordination With Bounded Neural Control
 
-Reproducibility package for **Liveness-Aware Obstacle-Waypoint Coordination With Bounded Neural Control for Multi-Agent Aerial Navigation**.
+Final reproducibility release for **Liveness-Aware Obstacle-Waypoint Coordination With Bounded Neural Control for Multi-Agent Aerial Navigation**.
 
-Public repository:
+[Public repository](https://github.com/shaun19920309/Success-Aware-Risk-Budgeted-Graph-Conditioned-Arbitration-for-Safe-Multi-Agent-Aerial-Navigation)
 
-<https://github.com/shaun19920309/Success-Aware-Risk-Budgeted-Graph-Conditioned-Arbitration-for-Safe-Multi-Agent-Aerial-Navigation>
-
-This release contains only the final method, its component evidence, and the corrected formal multi-training-seed experiment. Manuscript source/PDF, exploratory expert-routing branches, failed ensemble variants, and superseded formal outputs are intentionally excluded.
+Deployment uses synchronized stage-enter-egress targets, inflated-grid A* waypoints, waypoint-conditioned observations, and **one bounded BC motor controller**. It is not an ensemble. DAgger is a component ablation only. Manuscript PDF/LaTeX are excluded.
 
 ![Final architecture](docs/assets/final_liveness_waypoint_architecture.png)
 
-## Final Method
+## Primary Same-Waypoint 5M Comparison
 
-The deployed method is **not an expert ensemble**. It consists of:
+All five baselines receive identical phase targets and A* waypoints, unified active-target/progress/arrival/collision rewards, and corrected hybrid Lagrangian cost where applicable. Training seeds are 260000/260001/260002. Fifteen runs produced 45 immutable 1M/3M/5M checkpoints, each evaluated on 32 paired layouts: **1440/1440 evaluations**. Every rollout has 701 frames, matching initial physical hashes, one policy, and no safety shield.
 
-1. obstacle-aware A* routing with exact visibility compression;
-2. deterministic synchronized stage-enter-egress coordination at a shared-goal bottleneck;
-3. waypoint-conditioned observations; and
-4. one bounded behavioral-cloning controller producing four motor commands per agent.
+| Method | Success | Collision | Deadlock | Progress (m) | Objective/s | Risk <0.65 m |
+|---|---:|---:|---:|---:|---:|---:|
+| Proposed BC | 91.28% | 7.42% | 1.30% | 2.3595 | -0.5638 | 21.79% |
+| MAPPO 5M | 0.26% | 58.72% | 41.02% | -1.3810 | -3.4208 | 8.81% |
+| IPPO 5M | 8.72% | 28.12% | 63.15% | 0.5766 | -2.0436 | 31.73% |
+| MAPPO-Lagrangian 5M | 0.52% | 57.68% | 41.80% | -1.4065 | -3.5037 | 12.25% |
+| MAT 5M | 0.39% | 61.59% | 38.02% | -1.8634 | -4.5498 | 8.74% |
+| HATRPO 5M | 0.00% | 85.29% | 14.71% | -1.5793 | -5.2023 | 29.95% |
 
-The three released proposed checkpoints are independent training replicates with seeds `171001`, `171002`, and `171003`. They share the same frozen teacher dataset and architecture but differ in optimizer randomness.
+All 25 primary 5M outcome comparisons pass favorable hierarchical 95% CI, Holm correction (adjusted p=0.000125 at the Monte Carlo resolution), and 9/9 model-pair direction gates. Success increases by **82.55--91.28 percentage points**, collision decreases by **20.70--77.86 points**. The 9 pairings reuse 3 training seeds per method, not 9 independent seeds.
 
-## Corrected Formal Evidence
+![Training-seed results](docs/assets/fair_training_seed_robustness.png)
+![Budget curves](docs/assets/fair_learning_curve.png)
 
-The nominal study contains **18 valid formal models**:
+## Essential Caveats
 
-- Proposed, MAPPO, IPPO, MAPPO-Lagrangian, MAT, and HATRPO;
-- 3 independent training seeds per method;
-- 32 unseen, matched physical environment seeds per trained model;
-- 7.0 s episodes with exactly 701 simulator frames;
-- 1,000,000 environment steps for every learned baseline.
+- IPPO success improves from 0.39% to 3.26% to 8.72% at 1M/3M/5M; its three 5M models achieve 0.78%, 24.61%, and 0.78%.
+- Two distinct MAT checkpoints produce identical executed-action hash sequences with saturated actions in all 32 evaluations each. This diagnoses execution saturation, not duplicated weights; its optimization cause remains open.
+- Raw risk is **not uniformly lower**: proposed exposure exceeds MAPPO/Lagrangian/MAT; IPPO exposure CIs cross zero. Favorable HATRPO exposure intervals are exploratory, outside the primary Holm family.
+- Same high-level assistance does not equalize teacher supervision or design effort. BC uses 179,456 labels, not an equivalent RL interaction budget.
+- September 3 recovery lacked optimizer/process RNG and on-policy ValueNorm state. September 8 MAT/HATRPO recovery restored those available states but not simulator episodes or rollout buffers. Budgets are cumulative, **not uninterrupted or bitwise-continuous**. Recovery manifests are included.
+- Three training seeds, no hyperparameter sweep, and saturation limit claims about optimized RL. Neither convergence, formal safety, nor real-world transfer is established.
+- Objective/s is recomputed from raw terminal objective with a common 7.0-second denominator. The September 9 audit corrected a legacy BC/baseline 7.0/7.01 reporting mismatch; raw CSVs and all non-objective metrics are unchanged.
 
-Grand means over training and environment seeds are:
+## Supporting Evidence
 
-| Method | Success | Collision | Deadlock | Goal progress | Objective/s |
-|---|---:|---:|---:|---:|---:|
-| Proposed | **91.28%** | **7.42%** | **1.30%** | **2.3595** | **-0.5638** |
-| MAPPO | 0.13% | 69.27% | 30.60% | -1.2893 | -4.0647 |
-| IPPO | 0.26% | 47.92% | 51.82% | -1.1764 | -3.1618 |
-| MAPPO-Lagrangian | 0.13% | 60.29% | 39.58% | -1.5334 | -3.9951 |
-| MAT | 0.26% | 58.33% | 41.41% | -1.5678 | -4.2211 |
-| HATRPO | 0.00% | 77.21% | 22.79% | -1.3040 | -4.7276 |
+Proposed-only success: 88.02% (four agents), 96.35% (sparse/small obstacles), 69.79% (dense/large obstacles). These are not shifted-scenario baseline comparisons. Component ablation supports waypoint/phase coordination and finds no verified outcome gain from DAgger.
 
-All 25 primary proposed-versus-baseline comparisons pass the frozen three-part claim gate:
+The proposed stack's earlier isolated RTX 5090 profile is **9.020 ms/frame**. Baseline timing rows use earlier unadapted 1M policies, not the new same-waypoint 5M comparators.
 
-- the 95% hierarchical bootstrap interval is favorable and excludes zero;
-- the conditional randomization result remains significant after Holm correction (`p_Holm = 0.000125`); and
-- the effect has the favorable sign in all `9/9` cross-training-seed pairings.
-
-Observed effect ranges are:
-
-- success: `+91.02` to `+91.28` percentage points;
-- collision: `-40.49` to `-69.79` percentage points;
-- deadlock: `-21.48` to `-50.52` percentage points;
-- goal progress: `+3.5359` to `+3.9273` m;
-- objective/s: `+2.5981` to `+4.1639`.
-
-![Training-seed robustness](docs/assets/formal_training_seed_robustness.png)
-
-## Proposed-Only Generalization
-
-The frozen proposed checkpoints were also evaluated without additional training in three shifted environments. These suites establish proposed-method robustness; they are not cross-method superiority tests.
-
-| Scenario | Seeds/model | Success (hierarchical 95% CI) | Collision | Deadlock | Progress |
-|---|---:|---:|---:|---:|---:|
-| Obstacle-4 nominal | 16 | 88.02% [77.60, 96.88] | 11.98% | 0.00% | 2.0649 |
-| Obstacle-8 dense/large | 16 | 69.79% [60.16, 78.39] | 26.04% | 4.17% | 2.3449 |
-| Obstacle-8 sparse/small | 16 | 96.35% [92.45, 99.22] | 2.86% | 0.78% | 1.9828 |
-
-![Proposed-only generalization](docs/assets/formal_proposed_generalization.png)
-
-## Isolated RTX 5090 Runtime
-
-Methods were executed serially with synchronized CUDA timing, 3 training seeds, and 3 matched runtime seeds.
-
-| Method | Policy ms/frame | Coordination ms/frame | End-to-end ms/frame |
-|---|---:|---:|---:|
-| Proposed | **0.904** | 2.405 | **9.020** |
-| MAPPO | 2.376 | 0.073 | 11.319 |
-| IPPO | 2.256 | 0.073 | 11.141 |
-| MAPPO-Lagrangian | 2.199 | 0.073 | 11.326 |
-| MAT | 45.506 | 0.098 | 54.591 |
-| HATRPO | 12.826 | 0.080 | 23.276 |
-
-![Runtime comparison](docs/assets/formal_multiseed_runtime.png)
-
-## Repository Layout
-
-- `scripts/`: final controller, route/coordinator, formal training/evaluation launchers, statistics, and tests.
-- `data/training/`: exact teacher-labelled training and validation arrays.
-- `results/final_formal_multiseed/`: frozen protocols, three proposed checkpoints, compact matched seed rows, runtime rows, and machine-readable analysis.
-- `results/final_component_ablation/`: final architecture component evidence.
-- `third_party_patches/`: QuadSwarm adapters for upstream On-Policy and HARL repositories.
-- `docs/`: paper-level method, experiment, and result descriptions with claim boundaries.
-- `environment/`: validated WSL/conda software specification.
-- `reproduce/`: verification, retraining, testing, reanalysis, and manifest commands.
-- `manifests/`: deterministic SHA-256 inventory of the public release.
-
-## Quick Audit
-
-From WSL Ubuntu:
+## Reproduction
 
 ```bash
-cd /path/to/this/repository
-PYTHON=/home/xzl/miniconda3/envs/sci1-rl/bin/python \
-  python reproduce/verify_package.py
+python reproduce/verify_package.py
+PYTHON=python bash reproduce/reanalyze.sh
+PYTHON=python bash reproduce/run_tests.sh
 ```
 
-The verifier checks every package hash, both frozen protocol checksums, the corrected Lagrangian addendum, all proposed checkpoint hashes, the complete matched seed matrix, physical-state hashes, the 25-effect claim gate, generalization values, runtime values, and exclusion of manuscript files.
+Reanalysis uses 100,000 hierarchical bootstrap draws, 200,000 conditional sign flips, and a 25-test 5M Holm family. The manifest is checked before recomputation and refreshed afterward. Compact seed rows suffice for statistics; large baseline weights and per-frame traces are omitted.
 
-## Recompute the Statistics
+For full simulator regeneration see [EXPERIMENTS.md](docs/EXPERIMENTS.md), [environment](environment/ENVIRONMENT.md), and [external adapters](third_party_patches/README.md). Unpinned upstream sources and interruption history prevent a byte-identical fresh-training guarantee.
 
 ```bash
-PYTHON=/home/xzl/miniconda3/envs/sci1-rl/bin/python \
-  bash reproduce/reanalyze.sh
+PYTHON=python TRAIN_DEVICE=cuda bash reproduce/train_final_bc.sh
+OUT_ROOT="$PWD/results/regenerated_fair_waypoint_budget" PY=python \
+  bash scripts/run_horizon7_fair_waypoint_budget_logged.sh ippo 260000
 ```
 
-This performs 100,000 hierarchical bootstrap resamples per effect, 200,000 conditional sign flips, Holm correction across 25 tests, and the `9/9` cross-training-seed consistency check. Large baseline checkpoints and per-frame trajectories are not needed because the compact matched seed-level source rows are included and protected by the package manifest.
+Repeat baseline training for five methods and three registered seeds, using a new output root.
 
-## Retrain the Three Proposed Controllers
+## Layout
 
-```bash
-PYTHON=/home/xzl/miniconda3/envs/sci1-rl/bin/python \
-TRAIN_DEVICE=cuda \
-  bash reproduce/train_final_bc.sh
-```
+- `results/revision_horizon7_fair_waypoint_budget_20260901/`: primary raw rows, analysis, protocol, audits, recovery and training provenance.
+- `results/final_formal_multiseed/`: proposed checkpoints/reference rows, generalization, earlier isolated runtime, and secondary unequal-hierarchy 1M diagnostics.
+- `results/final_component_ablation/`: final-method component evidence.
+- `data/training/`: exact BC train/validation arrays.
+- `scripts/`, `third_party_patches/`: final controller, adapters, training, evaluation, statistics, tests, scientific figure generators.
+- `docs/`, `environment/`, `reproduce/`, `manifests/`: interpretation, setup, commands, SHA-256 inventory.
 
-The locked configuration is Adam, learning rate `1e-3`, batch size `4096`, 60 epochs, a `256-256-128` SiLU MLP, and `tanh`-bounded four-motor output. The exact 179,456 training labels and 22,432 validation labels are included.
-
-## Full Baseline Regeneration
-
-Full simulator regeneration additionally requires:
-
-- the QuadSwarm simulator;
-- the upstream On-Policy and HARL repositories;
-- the adapters in `third_party_patches/`;
-- WSL2, the environment in `environment/`, and an NVIDIA GPU.
-
-The formal baseline launcher is:
-
-```bash
-PY=/home/xzl/miniconda3/envs/sci1-rl/bin/python \
-  bash scripts/launch_horizon7_formal_multiseed.sh METHOD
-```
-
-where `METHOD` is `mappo`, `ippo`, `lagrangian`, `mat`, or `hatrpo`. Exact seeds, horizons, environment parameters, and correction history are documented in `docs/EXPERIMENTS.md`.
-
-## Claim Boundary
-
-The evidence supports a simulation claim: in the tested shared-goal aerial-navigation environments, the final method substantially improves completion, collision, deadlock, goal progress, and the simulator-native objective relative to the five trained baselines. It does not establish formal safety, robustness to arbitrary model mismatch, or real-world transfer. Raw proximity exposure is descriptive and is not used as a universal superiority claim because low exposure can also arise from failure to approach the goal.
+Archived training metadata is stored under `training_provenance/`, not a runnable checkpoint tree, so a fresh launcher cannot mistake metadata for completed training.

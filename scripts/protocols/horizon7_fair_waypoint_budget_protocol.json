@@ -1,0 +1,133 @@
+{
+  "protocol": "horizon7_fair_waypoint_budget_v1",
+  "frozen_at": "2026-09-01T13:19:12+08:00",
+  "research_question": "Do standard MARL baselines remain weaker after receiving the same synchronized phase targets, inflated-grid A* waypoints, objective definition, and reward shaping as the final paper controller?",
+  "methods": [
+    "mappo",
+    "ippo",
+    "lagrangian",
+    "mat",
+    "hatrpo"
+  ],
+  "training_seeds": [
+    260000,
+    260001,
+    260002
+  ],
+  "proposed_reference_training_seeds": [
+    171001,
+    171002,
+    171003
+  ],
+  "continuous_training_environment_steps": 5000000,
+  "checkpoint_budgets": [
+    1000000,
+    3000000,
+    5000000
+  ],
+  "environment": {
+    "num_agents": 8,
+    "quads_mode": "o_static_same_goal",
+    "use_obstacles": true,
+    "episode_duration_seconds": 7.0,
+    "visible_neighbors": 2,
+    "shared_goal_slot_radius_m": 0.45,
+    "obstacle_density": 0.2,
+    "obstacle_size": 0.6,
+    "rollout_threads": 1,
+    "episode_length": 128,
+    "episode_randomization": "Seed the run once, then advance the simulator RNG across resets without replaying the same initial state."
+  },
+  "shared_hierarchy": {
+    "staging_radius_m": 1.2,
+    "staging_ready_radius_m": 0.3,
+    "egress_radius_m": 1.2,
+    "max_staging_frames": 350,
+    "waypoint_clearance_buffer_m": 0.35,
+    "waypoint_grid_resolution_m": 0.25,
+    "waypoint_room_margin_m": 0.15,
+    "waypoint_reached_radius_m": 0.3,
+    "waypoint_replan_interval_frames": 25
+  },
+  "shared_reward": {
+    "native_position_term": "Redirected from the final center goal to the current phase or A* waypoint target; all other native dynamics terms are retained.",
+    "progress_weight": 1.0,
+    "team_progress_mix": 0.5,
+    "per_step_progress_clip_m": 0.05,
+    "canonical_arrival_bonus": 0.5,
+    "agent_collision_penalty": 5.0,
+    "obstacle_collision_penalty": 5.0,
+    "canonical_goal_radius_m": 0.5,
+    "canonical_goal_speed_mps": 0.5,
+    "canonical_goal_dwell_frames": 10
+  },
+  "lagrangian_parameters": {
+    "cost_type": "hybrid",
+    "cost_limit": 0.0,
+    "lagrangian_lr": 0.05,
+    "lagrangian_init": 1.0,
+    "lagrangian_max": 20.0
+  },
+  "evaluation": {
+    "environment_seeds": [
+      250000,
+      250001,
+      250002,
+      250003,
+      250004,
+      250005,
+      250006,
+      250007,
+      250008,
+      250009,
+      250010,
+      250011,
+      250012,
+      250013,
+      250014,
+      250015,
+      250016,
+      250017,
+      250018,
+      250019,
+      250020,
+      250021,
+      250022,
+      250023,
+      250024,
+      250025,
+      250026,
+      250027,
+      250028,
+      250029,
+      250030,
+      250031
+    ],
+    "frames_per_episode": 701,
+    "deterministic_policy": true,
+    "shared_runtime_hierarchy": true,
+    "action_ensemble_or_shield": false,
+    "proposed_reference_root": "results/revision_horizon7_formal_multiseed_20260826/evaluation/proposed",
+    "required_physical_state_hash_match": true
+  },
+  "statistics": {
+    "primary_budget": 5000000,
+    "primary_metrics": [
+      "success",
+      "collision",
+      "deadlock",
+      "goal_progress",
+      "objective_per_second"
+    ],
+    "primary_holm_family_size": 25,
+    "hierarchical_bootstrap_resamples": 100000,
+    "conditional_sign_flip_draws": 200000,
+    "confidence_interval": "95% hierarchical bootstrap over training seeds and matched environment seeds",
+    "conditional_test": "Monte Carlo paired sign-flip test over environment-seed effects with Holm correction",
+    "cross_training_seed_check": "All nine proposed-versus-baseline model-seed pairs must have the favorable direction.",
+    "secondary_budgets": [
+      1000000,
+      3000000
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "requested_steps": 3000000,
+  "actual_steps": 3000064,
+  "algorithm": "mat",
+  "training_seed": 260000
+}

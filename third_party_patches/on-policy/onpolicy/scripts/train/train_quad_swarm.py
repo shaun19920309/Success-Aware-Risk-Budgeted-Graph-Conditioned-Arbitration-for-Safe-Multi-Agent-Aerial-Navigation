@@ -60,6 +60,18 @@ def env_args_from_all_args(all_args, seed):
         "liveness_goal_speed": all_args.liveness_goal_speed,
         "liveness_goal_dwell_steps": all_args.liveness_goal_dwell_steps,
         "shared_goal_slot_radius": all_args.shared_goal_slot_radius,
+        "agent_collision_reward": all_args.agent_collision_reward,
+        "fair_hierarchy": all_args.fair_hierarchy,
+        "fair_randomize_episode_resets": all_args.fair_randomize_episode_resets,
+        "fair_staging_radius": all_args.fair_staging_radius,
+        "fair_staging_ready_radius": all_args.fair_staging_ready_radius,
+        "fair_egress_radius": all_args.fair_egress_radius,
+        "fair_max_staging_frames": all_args.fair_max_staging_frames,
+        "fair_waypoint_clearance_buffer": all_args.fair_waypoint_clearance_buffer,
+        "fair_waypoint_grid_resolution": all_args.fair_waypoint_grid_resolution,
+        "fair_waypoint_room_margin": all_args.fair_waypoint_room_margin,
+        "fair_waypoint_reached_radius": all_args.fair_waypoint_reached_radius,
+        "fair_waypoint_replan_interval": all_args.fair_waypoint_replan_interval,
     }
 
 
@@ -107,6 +119,23 @@ def parse_args(args, parser):
     parser.add_argument("--liveness_goal_speed", type=float, default=0.5)
     parser.add_argument("--liveness_goal_dwell_steps", type=int, default=10)
     parser.add_argument("--shared_goal_slot_radius", type=float, default=0.0)
+    parser.add_argument("--agent_collision_reward", type=float, default=0.0)
+    parser.add_argument("--fair_hierarchy", type=str2bool, default=False)
+    parser.add_argument(
+        "--fair_randomize_episode_resets", type=str2bool, default=False
+    )
+    parser.add_argument("--fair_staging_radius", type=float, default=1.20)
+    parser.add_argument("--fair_staging_ready_radius", type=float, default=0.30)
+    parser.add_argument("--fair_egress_radius", type=float, default=1.20)
+    parser.add_argument("--fair_max_staging_frames", type=int, default=350)
+    parser.add_argument(
+        "--fair_waypoint_clearance_buffer", type=float, default=0.35
+    )
+    parser.add_argument("--fair_waypoint_grid_resolution", type=float, default=0.25)
+    parser.add_argument("--fair_waypoint_room_margin", type=float, default=0.15)
+    parser.add_argument("--fair_waypoint_reached_radius", type=float, default=0.30)
+    parser.add_argument("--fair_waypoint_replan_interval", type=int, default=25)
+    parser.add_argument("--milestone_steps", type=int, nargs="*", default=[])
     parser.add_argument("--log_dir", type=str, default=str(BASE / "results/onpolicy_quad_swarm"))
     parser.add_argument("--use_lagrangian", action="store_true", default=False)
     parser.add_argument("--lagrangian_cost_type", type=str, default="hybrid")
@@ -151,10 +180,13 @@ def main(args):
     all_args.env_name = "QuadSwarm"
     all_args.scenario_name = scenario_name
 
-    run_dir = Path(all_args.log_dir) / all_args.env_name / scenario_name / all_args.algorithm_name / all_args.experiment_name
-    run_dir.mkdir(parents=True, exist_ok=True)
+    run_root = Path(all_args.log_dir) / all_args.env_name / scenario_name / all_args.algorithm_name / all_args.experiment_name
+    run_root.mkdir(parents=True, exist_ok=True)
+    resume_run_dir = os.environ.get("ONPOLICY_RESUME_RUN_DIR", "").strip()
 
     if all_args.use_wandb:
+        if resume_run_dir:
+            raise RuntimeError("ONPOLICY_RESUME_RUN_DIR is only supported with local logging.")
         run = wandb.init(
             config=all_args,
             project=all_args.env_name,
@@ -162,17 +194,34 @@ def main(args):
             notes=socket.gethostname(),
             name=f"{all_args.algorithm_name}_{all_args.experiment_name}_seed{all_args.seed}",
             group=scenario_name,
-            dir=str(run_dir),
+            dir=str(run_root),
             job_type="training",
             reinit=True,
         )
     else:
-        existing = [int(path.name.replace("run", "")) for path in run_dir.iterdir() if path.name.startswith("run")]
-        run_dir = run_dir / f"run{max(existing) + 1 if existing else 1}"
-        run_dir.mkdir(parents=True, exist_ok=True)
+        if resume_run_dir:
+            run_dir = Path(resume_run_dir).expanduser().resolve()
+            if run_dir.parent != run_root.resolve():
+                raise RuntimeError(
+                    f"Resume directory {run_dir} is not under expected run root {run_root.resolve()}."
+                )
+            if not (run_dir / "config.json").is_file():
+                raise RuntimeError(f"Resume directory has no config.json: {run_dir}")
+            if all_args.model_dir is None:
+                raise RuntimeError("A --model_dir checkpoint is required for in-place resume.")
+            print(f"Resuming official on-policy training in place: {run_dir}", flush=True)
+        else:
+            existing = [
+                int(path.name.replace("run", ""))
+                for path in run_root.iterdir()
+                if path.name.startswith("run")
+            ]
+            run_dir = run_root / f"run{max(existing) + 1 if existing else 1}"
+            run_dir.mkdir(parents=True, exist_ok=True)
 
-    with (run_dir / "config.json").open("w", encoding="utf-8") as f:
-        json.dump(vars(all_args), f, ensure_ascii=False, indent=2, sort_keys=True)
+    if not resume_run_dir:
+        with (run_dir / "config.json").open("w", encoding="utf-8") as f:
+            json.dump(vars(all_args), f, ensure_ascii=False, indent=2, sort_keys=True)
 
     setproctitle.setproctitle(f"{all_args.algorithm_name}-QuadSwarm-{all_args.experiment_name}@{all_args.user_name}")
 

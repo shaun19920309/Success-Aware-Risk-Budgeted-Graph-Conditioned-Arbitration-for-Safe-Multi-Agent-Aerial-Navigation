@@ -1,0 +1,896 @@
+{
+  "protocol": "horizon7_fair_waypoint_budget_v1",
+  "result_root": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901",
+  "complete_runs": 15,
+  "total_runs": 15,
+  "rows": [
+    {
+      "method": "mappo",
+      "seed": 260000,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "2b81b08f5fdddb01b81b9790d98eccf967e811802fdb696fe890a0180e7db513",
+            "critic.pt": "6974973cae1613c1fcb8d6666e528a96ee1074a4ce76b3707b79f735ad22fd85"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "d3e1e06330fd194184e7c364f2a94b25424ffe48ae5eb5edc1a95f6357253b24",
+            "critic.pt": "37dc33d81f789d2fca1f39ce46285813ea4d1862767811abf27bb2175e511f1c"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "2a920733004837f592482ee1c328744e5a029b4a7dfb9403053bb15c3f9eccb3",
+            "critic.pt": "9f570f6a8d59a6ba9c10aca165c866449a481825270f83f5583264145c2d8a79"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "mappo",
+      "seed": 260001,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "75649fb3f9c17ac2e79d6dd8efc4e6991ea610eedeac49169dadedfe33333e84",
+            "critic.pt": "eb0f838896915cd7ceab018c5a43af458363b14df8bc4c0b0b7d2062de0f6df1"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "ee3b99332b41130feb85fd25abbe0c46e06b5ed33afadccb45e18e9182938e04",
+            "critic.pt": "02db9ae1bb2fe8200b331fc1e4a93b723dab94b1fca40e940e2acdb0b82c21e3"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "a3e80faff4947bc4fd84462a06dbcb7a0217ba2c00c0d8f379f9445409afa8b7",
+            "critic.pt": "7788ec153750b5b331b88587e982793131fba7b02aad9252f6d71828df51dce8"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "mappo",
+      "seed": 260002,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "d6fee65bd24c952115c54ebfc3c27501a50e1573845df58c7122d9e224c30438",
+            "critic.pt": "6258d46ca800b2e927869966e5c9f573247b5eba2b82bb475f5f365b2a9d1ba9"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "a9309c8e6f1f9a5585db80539b51e4c9a455e5ae7d657520e7642a0bb8e52865",
+            "critic.pt": "2cd5fa67526782131cab3f27869ce4b949ea4d7fb8481af2dad7c4e641564912"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mappo/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo/official_mappo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "8426d798f4b4755810d24b2f44867d247e3e763df1a0c487c921fc6753ebb832",
+            "critic.pt": "311224b6fad84800fc5f8d12c32c77ce2d7b81d9c76565852af5328deb982539"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "ippo",
+      "seed": 260000,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "ippo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "b010211e344764057850977510ef6ce1399b68f5df7a88b229160516af017a41",
+            "critic.pt": "7c3bbb609801c13029f1bc678859a78e3cc8460ffbd5ad999c3f6e070a7a61da"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "ippo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "b9dbcad59e5390c186038fecd59bbb720d250b805919d7ed5dc698f0afc19619",
+            "critic.pt": "b52adafbea322d8d818ef78a3ac25fa0b73008bb0c55df755ec6cb5e6fccd061"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "ippo",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "020677d591e31f785b90130eed1d59b85860e6cbe84a61ec53b4ceb083dbdb02",
+            "critic.pt": "ceb15440ebe5c8a4f24715887cea87d3282e0cd856a7ac42e0dde26e009f6057"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "ippo",
+      "seed": 260001,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "ippo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "7d7ee7765bdf1d4928665acf0a43e822aea4cdaecf7f25c2b1f441508ee03aca",
+            "critic.pt": "3e3f03aee219968332973d160da07411d4f3dbebbcd8b7fb35d011e30a1cedb1"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "ippo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "7ca4311a9ac84a2d0c720594fb16e2a0ab755ec801ab66cff04eab810483e067",
+            "critic.pt": "be17c6c34ff9bc6e0d8941b7b515be94bb7089a36da20b850096a43ca3ce77eb"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "ippo",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "57648daf78a9790fadbdcfa8eb7422535c700c3361ddc31f97e42f8c81472719",
+            "critic.pt": "29cea09e640b7570dbdde86411c1a3e4848f8c72403e46b9800c0d5d47f3597c"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "ippo",
+      "seed": 260002,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "ippo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "cf6b6c5623d5e949edad146254b57787b0c1703c490edc4c16637f476fc69fc0",
+            "critic.pt": "fb7f2f22914a13e4141c45417848d194e5cc1acc7de4f29d56772dc7ac81f2ed"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "ippo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "3b5815fb17cb765289e28aca07f29fa93b583f698f5a7f2f69be6c33f5a6627e",
+            "critic.pt": "2c9e9b9ad04a8b8db434d78a4caee48409a5ee50418c0fc7abd1001eb4df05b3"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "ippo",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "a43458940996e0a9b2bfcb0861daf8cc0eff97ec4237645d3599ed1f9898c57d",
+            "critic.pt": "f4b09782f34b353e341790abac005055cd5a99cbfbd8d1ae507c0a9dba71b45d"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "lagrangian",
+      "seed": 260000,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "82d5e9b804dbcd39bb60ca7076cbb045d0c49e0903c322768a65abf9dae28892",
+            "critic.pt": "9c8bfa6441f515d968b2aecb567603dec056a4c4aa6249a1d9b02e2a9c61160b"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "81b666c1636a1fcec11868e09f9229a86f0378c23fce81c4dfad5d8e934a89d9",
+            "critic.pt": "d568c77106c6f75374f8f5316f64fe431a303bbc5bc06d2de8b6fc5c69e56036"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "929777961319ae2d5493f784718181230333049a0984482190c1f17f1ee32df0",
+            "critic.pt": "6c02d46b7de3c3c8e2d0683148c0de5cdccd7bdb6009f0f3fcdb78bcc373cdb4"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "lagrangian",
+      "seed": 260001,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "2516d8ccccbfef75c512806249e429389812cf5211afa8596c9fe63534f21357",
+            "critic.pt": "9d34e84cac0d94031e7532b3c4e802f36c9860347a5cea177d0f47b248eab922"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "e155f2824203ed190bc15ea522d9851b1391359235f97e71f6324688c0141e88",
+            "critic.pt": "7221363d2b5a955dfa76f195cb82a4ce52a34fc9ff72466409ad3568ffce0852"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "c5a21ea2c44b247610ec951101f75348f0638eecdb32fd5e3e21e078364342ac",
+            "critic.pt": "f84320b6af14ca91a47cffea283114d8a67d605e8edcd3bb29d6af1c7be44b21"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "lagrangian",
+      "seed": 260002,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "65084db1a2a66555412f2939eb8cb6dc02fbbe229968a777d4d0b0e55c23d20f",
+            "critic.pt": "eae8ff07db8f797e23ca3333ff59ed210c1129635be15e9a7b47e76725cb3967"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "08d74e1cb5cd29d941372886af562e75583e8dc867c0751b4eaeb36ea92bf8b9",
+            "critic.pt": "6f080d465a7464b633ff57c95700b654f03e617c8b5413c2e0dbf5d3956507d2"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/lagrangian/QuadSwarm/o_static_same_goal_8agents_obstacle/mappo_lagrangian/official_mappo_lagrangian_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mappo_lagrangian",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor.pt": "b19a0b4a7a73536e279bf24a79b7063a40e66ac1e02fa7602822cd6b14e5b5f0",
+            "critic.pt": "8907d35e8eea50a4352b7430f6b569f338f8d83848983a4305f7ee917eeb6b5d"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "mat",
+      "seed": 260000,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mat",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "d3232d113196362a1e034d2c56ecd600a19511286163eeb151f27dfa51b4b465"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mat",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "6cd60a74b8d4bb66296f7b09b30943c9be10f43a5483632144e79bbbd9998c62"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mat",
+            "training_seed": 260000
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "5c0f8cd3a014eac02949e5fb8a33464e1e1534459ab00137bb910a4bd3b2d735"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "mat",
+      "seed": 260001,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mat",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "a09b4f1fb5af7d3f2600ee2a5a11cf2cd653e527485e898344216464fd503396"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mat",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "13ee90d075314867acb65ff99e39521b132569f76e161b2b51bbd1f28ca36bd1"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260001/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mat",
+            "training_seed": 260001
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "445e4dc3f5df6d0728bff9e72d99fc33802fa542cd34411a02765b5b0f0eab80"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "mat",
+      "seed": 260002,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step1000000",
+          "manifest": {
+            "requested_steps": 1000000,
+            "actual_steps": 1000064,
+            "algorithm": "mat",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "27fd476b4b7017de5214f52627b8fb2691778f16a7671daedece7d75f233e425"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step3000000",
+          "manifest": {
+            "requested_steps": 3000000,
+            "actual_steps": 3000064,
+            "algorithm": "mat",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "35289ad7c95562c6a0fc854a53e28755e4817751a39692123745711192b42c99"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260002/run1/milestones/step5000000",
+          "manifest": {
+            "requested_steps": 5000000,
+            "actual_steps": 4999936,
+            "algorithm": "mat",
+            "training_seed": 260002
+          },
+          "checkpoint_sha256": {
+            "transformer_0.pt": "7eb2f1a217b1d26059bcf1fc64ceff340013c002a1d7c24ff22d1170c1e7750f"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "hatrpo",
+      "seed": 260000,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/milestones/step1000000",
+          "manifest": {
+            "actual_steps": 1000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 1000000,
+            "seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent1.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent2.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent3.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent4.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent5.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent6.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "actor_agent7.pt": "f6447acc5b95d7835cbf9b8d8693cea8ec09915352815752b00074ab5b711483",
+            "critic_agent.pt": "bbda9f1d9149801c56d0d4056c6bd331587fb66de54aad5b48c96d59354f2e0b",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/milestones/step3000000",
+          "manifest": {
+            "actual_steps": 3000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 3000000,
+            "seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent1.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent2.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent3.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent4.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent5.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent6.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "actor_agent7.pt": "7f33db3e075e71e3a058807c22ddbbe87c77564f7644f7af5662eaa7739936d9",
+            "critic_agent.pt": "0aa09517c028820f0200638d78a181fcd5628c0eeea75616675b973a79b22b4e",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260000/seed-260000-2026-09-01-13-32-14/milestones/step5000000",
+          "manifest": {
+            "actual_steps": 4999936,
+            "algorithm": "hatrpo",
+            "requested_steps": 5000000,
+            "seed": 260000
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent1.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent2.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent3.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent4.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent5.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent6.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "actor_agent7.pt": "41fbb2b8319fd27829d61a8e03ed2238458aa990c473c92e57cb82696fd1b56b",
+            "critic_agent.pt": "084bfcfcb32451413b6490f842d18108ff548f8e0a9e6d8e470224737a703b35",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "hatrpo",
+      "seed": 260001,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/milestones/step1000000",
+          "manifest": {
+            "actual_steps": 1000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 1000000,
+            "seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent1.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent2.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent3.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent4.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent5.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent6.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "actor_agent7.pt": "0fcb0dae6ba17d68d665b76cd785b0e6b4c89d855b3b5f2067a73e636db08495",
+            "critic_agent.pt": "f33f82257825a2354fce3ed982c26f92ef31dc432489eb0eb4f277018d13283a",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/milestones/step3000000",
+          "manifest": {
+            "actual_steps": 3000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 3000000,
+            "seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent1.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent2.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent3.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent4.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent5.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent6.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "actor_agent7.pt": "71f5c6ec8bc5b2b251c9b7d18ee77898e7376957c4cd7da3541ce0427340f440",
+            "critic_agent.pt": "41b0f9fdf228411da20ca5b7540eb6d4530fa6c576a7c074461248561a6ad1f6",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260001/seed-260001-2026-09-01-13-32-14/milestones/step5000000",
+          "manifest": {
+            "actual_steps": 4999936,
+            "algorithm": "hatrpo",
+            "requested_steps": 5000000,
+            "seed": 260001
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent1.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent2.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent3.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent4.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent5.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent6.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "actor_agent7.pt": "c359a2d905f63d199e2c0c070fc1b12140d07c24a6229aefb9e75a4b3d283581",
+            "critic_agent.pt": "3e37902bfd1dc659a8c84eda8b556fef0976c206eb846252e6a7cee226c84eaf",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "method": "hatrpo",
+      "seed": 260002,
+      "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14",
+      "config": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/config.json",
+      "milestones": {
+        "1000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/milestones/step1000000",
+          "manifest": {
+            "actual_steps": 1000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 1000000,
+            "seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent1.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent2.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent3.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent4.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent5.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent6.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "actor_agent7.pt": "690dadb08987162e5ee718cf28a324f20791cabcb197bde81185e9c2c6ef8715",
+            "critic_agent.pt": "b16c54ed559fea3475284319b1c5b2d509a7d1f5bbdf371857ed5052910ca949",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "3000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/milestones/step3000000",
+          "manifest": {
+            "actual_steps": 3000064,
+            "algorithm": "hatrpo",
+            "requested_steps": 3000000,
+            "seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent1.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent2.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent3.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent4.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent5.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent6.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "actor_agent7.pt": "bf9d5de533436535cd5c321e8061703c1a4a9352abba51f2945f964fb75c84fd",
+            "critic_agent.pt": "f47aa2097a0b8223739e86ae9c5b3138b4c95e2e60c869d1d21de08b984c69c2",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        },
+        "5000000": {
+          "path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/hatrpo/quad_swarm/o_static_same_goal_8agents_obstacle/hatrpo/hatrpo_o_static_same_goal_8agents_obstacle_seed260002/seed-260002-2026-09-01-13-32-14/milestones/step5000000",
+          "manifest": {
+            "actual_steps": 4999936,
+            "algorithm": "hatrpo",
+            "requested_steps": 5000000,
+            "seed": 260002
+          },
+          "checkpoint_sha256": {
+            "actor_agent0.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent1.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent2.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent3.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent4.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent5.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent6.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "actor_agent7.pt": "827ca14908d202b8590833228ff81708ec1d852cd84eae0a1c077bc8612280d6",
+            "critic_agent.pt": "49ad692fd76adfb4a377d9633da4a919bc88fc34203d5d2ab896a6bd029924f5",
+            "value_normalizer.pt": "089d26be53b301c71950352625e507d1284733da6de04fec36589185dab567af"
+          },
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "status": "pass",
+      "errors": []
+    }
+  ]
+}

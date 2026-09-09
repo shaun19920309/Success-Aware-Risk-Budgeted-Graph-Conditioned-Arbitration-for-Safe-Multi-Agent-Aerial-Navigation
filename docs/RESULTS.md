@@ -1,85 +1,41 @@
 # Final Results and Interpretation
 
-Machine-readable source of truth: `results/final_formal_multiseed/analysis/`.
+The primary result is the **same-waypoint 5M comparison**, not the earlier unadapted 1M screen. See the root README for the complete main table, and `results/revision_horizon7_fair_waypoint_budget_20260901/analysis/` for all 105 method/budget/metric contrasts, model means, budget effects, learning curves and the latest report.
 
-## Nominal Multi-Training-Seed Comparison
+## Main Conclusion
 
-| Method | Success | Collision | Deadlock | Progress | Objective/s |
-|---|---:|---:|---:|---:|---:|
-| Proposed | **91.28%** | **7.42%** | **1.30%** | **2.3595** | **-0.5638** |
-| MAPPO | 0.13% | 69.27% | 30.60% | -1.2893 | -4.0647 |
-| IPPO | 0.26% | 47.92% | 51.82% | -1.1764 | -3.1618 |
-| MAPPO-Lagrangian | 0.13% | 60.29% | 39.58% | -1.5334 | -3.9951 |
-| MAT | 0.26% | 58.33% | 41.41% | -1.5678 | -4.2211 |
-| HATRPO | 0.00% | 77.21% | 22.79% | -1.3040 | -4.7276 |
+Proposed success is 91.28%, collision 7.42%, deadlock 1.30%, progress 2.3595 m, and objective/s -0.5638. The strongest 5M baseline by success, progress and objective is IPPO: 8.72%, 0.5766 m, and -2.0436 objective/s.
 
-The proposed method is stable across its three independently trained checkpoints: success ranges from 90.23% to 91.80%, and collision from 6.64% to 8.20%. Every individual baseline checkpoint has success at or below 0.39%. Thus the result is not driven by one favorable proposed seed or one failed baseline seed.
+Against IPPO, paired success gain is +82.55 percentage points, hierarchical 95% CI [67.84,92.71]; collision change is -20.70 points, CI [-36.33,-8.07]; deadlock -61.85 points, CI [-73.44,-51.56]; progress +1.7829 m, CI [0.2565,3.2190]; objective/s +1.4798, CI [0.6351,2.4208].
 
-All 25 primary comparisons pass the hierarchical interval, Holm correction, and `9/9` cross-training-seed consistency gate. Effect ranges are:
+All 25 primary 5M tests pass the favorable hierarchical interval, conditional Holm p=0.000125, and 9/9 model-pair direction gates. Across baselines, success improves 82.55--91.28 points, collision declines 20.70--77.86 points, deadlock declines 13.41--61.85 points, progress improves 1.7829--4.2229 m, and objective/s improves 1.4798--4.6385.
 
-| Metric | Proposed-minus-baseline range | Direction |
-|---|---:|---|
-| Success | +91.02 to +91.28 percentage points | higher is better |
-| Collision | -40.49 to -69.79 percentage points | lower is better |
-| Deadlock | -21.48 to -50.52 percentage points | lower is better |
-| Goal progress | +3.5359 to +3.9273 m | higher is better |
-| Objective/s | +2.5981 to +4.1639 | higher is better |
+Objective figures use a unified 7.0-second denominator, rebuilt from raw terminal objectives after discovering that legacy baseline exports used 7.01 seconds. This correction leaves all other metrics unchanged.
 
-The joint interpretation matters. Baselines remain active but generally move away from the goal and terminate in collision or deadlock. The proposed policy combines high completion with positive progress and a less negative native objective. This supports a liveness-and-safety result under the matched simulation protocol, not merely a low-risk-exposure result.
+## Why the Gap Is Not a Pure Coordination Effect
 
-## MAPPO-Lagrangian Correction
+Providing identical stage targets and A* waypoints controls the earlier planning-assistance imbalance. It does not equalize analytic-teacher information or optimizer behavior. BC is trained on privileged teacher actions; the RL policies must learn motor tracking from interaction. The experiment compares these complete systems under matched high-level assistance, not equally informed optimizers.
 
-The corrected MAPPO-Lagrangian grand mean is 0.13% success, 60.29% collision, and 39.58% deadlock. Its collision rate varies from 53.12% to 70.70% across training seeds. These values replace all outputs from the invalid original adapter, which had accidentally reproduced MAPPO behavior. The correction does not change the paper conclusion: every primary proposed-minus-Lagrangian effect remains favorable under the full claim gate.
+IPPO improves from 0.39% to 3.26% to 8.72% success at 1M/3M/5M. Its 5M seeds achieve 0.78%, 24.61%, and 0.78%, revealing meaningful training variability. Two distinct MAT checkpoints have identical executed-action hash sequences and fully saturated actions in all 32 layouts. This is not checkpoint duplication, but its optimization cause is not yet isolated.
 
-## Generalization Boundary
+Host interruptions and partial-state recovery further limit learning-curve interpretation. Five million cumulative steps do not establish convergence, and no comprehensive hyperparameter search or clean uninterrupted replication is available.
 
-| Scenario | Success | 95% hierarchical CI | Collision | Deadlock | Progress | Objective/s |
-|---|---:|---:|---:|---:|---:|---:|
-| Obstacle-4 nominal | 88.02% | [77.60, 96.88] | 11.98% | 0.00% | 2.0649 | -0.5773 |
-| Obstacle-8 dense/large | 69.79% | [60.16, 78.39] | 26.04% | 4.17% | 2.3449 | -1.0163 |
-| Obstacle-8 sparse/small | 96.35% | [92.45, 99.22] | 2.86% | 0.78% | 1.9828 | -0.3499 |
+## Risk Is Not Uniformly Improved
 
-The sparse/small and four-agent settings retain strong completion. Dense/large obstacles are the clearest remaining boundary: success drops by about 21.5 percentage points relative to nominal and collision rises to 26.04%. The method therefore generalizes meaningfully but is not insensitive to obstacle difficulty.
+Proposed mean risk below 0.65 m is 21.79%, above MAPPO 8.81%, Lagrangian 12.25%, and MAT 8.74%. Their low exposure coexists with negative progress and frequent collision. IPPO has higher mean risk but its paired intervals cross zero at both thresholds. HATRPO's exposure differences favor proposed and exclude zero, but are exploratory, outside the 25 primary tests.
 
-These experiments are proposed-only. They support robustness of the frozen method and do not support claims that every baseline is inferior in every shifted scenario.
+The supported claim is improved completion and collision outcomes in this simulator, **not universal risk minimization**.
 
-## Runtime
+## Supporting Evidence
 
-| Method | Policy ms/frame | Coordination ms/frame | End-to-end ms/frame |
+| Proposed-only suite | Success | Hierarchical 95% CI | Collision |
 |---|---:|---:|---:|
-| Proposed | **0.904** | 2.405 | **9.020** |
-| MAPPO | 2.376 | 0.073 | 11.319 |
-| IPPO | 2.256 | 0.073 | 11.141 |
-| MAPPO-Lagrangian | 2.199 | 0.073 | 11.326 |
-| MAT | 45.506 | 0.098 | 54.591 |
-| HATRPO | 12.826 | 0.080 | 23.276 |
+| Four-agent nominal | 88.02% | [77.60,96.88] | 11.98% |
+| Eight-agent sparse/small | 96.35% | [92.45,99.22] | 2.86% |
+| Eight-agent dense/large | 69.79% | [60.16,78.39] | 26.04% |
 
-The deterministic route/coordinator adds more non-policy overhead than the learned baselines, but the small single controller offsets this cost. Its measured end-to-end frame time is lower than every comparator in the isolated serial RTX 5090 benchmark.
+These suites establish a measured dense-obstacle boundary, not superiority over baselines in shifted scenarios. Component ablations support the implemented waypoint/phase decomposition and no verified DAgger outcome gain.
 
-## Component Evidence
+The earlier isolated proposed runtime is 0.904 ms neural inference, 2.405 ms coordination, and 9.020 ms end to end. Baseline timing rows are earlier unadapted 1M measurements and must not be presented as a fair 5M latency comparison.
 
-The final component study in `results/final_component_ablation/` shows the design sequence:
-
-1. direct analytic control establishes motion but collides frequently;
-2. obstacle waypoints deliver the largest collision reduction;
-3. synchronized stage-enter-egress coordination resolves shared-goal blocking;
-4. bounded BC retains the coordinated behavior with fast inference;
-5. the tested DAgger extension changes no outcome rate and is excluded.
-
-This supports the implemented module roles without presenting failed routing or ensemble variants as contributions.
-
-## What the Evidence Supports
-
-The formal evidence supports the following simulator-scoped conclusion:
-
-> Under matched 7 s shared-goal obstacle navigation, the final route-coordination-plus-bounded-control method substantially improves success, collision, deadlock, goal progress, and simulator-native objective relative to MAPPO, IPPO, corrected MAPPO-Lagrangian, MAT, and HATRPO, with effects consistent across independent training and environment seeds.
-
-## What It Does Not Support
-
-- No formal collision-avoidance guarantee.
-- No claim of universal raw-proximity dominance.
-- No baseline-superiority claim in proposed-only generalization suites.
-- No robustness guarantee for arbitrary dynamics mismatch.
-- No real-world transfer claim.
-
-The machine-readable claim gate and report should be cited instead of older single-checkpoint result files.
+No formal collision-avoidance proof, real-world flight validation, universal RL superiority, or convergence claim is supported.

@@ -297,10 +297,14 @@ def main() -> int:
     check_nominal_matrix()
     check_generalization_and_runtime()
     check_paper_values()
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from audit_horizon7_fair_results import audit
+    fair = audit(ROOT / "results/revision_horizon7_fair_waypoint_budget_20260901", RESULT_ROOT)
     print("Package verification passed")
-    print("  formal models: 18/18")
-    print("  nominal matrix: 6 methods x 3 training seeds x 32 matched environment seeds")
-    print("  primary claims: 25/25 accepted under hierarchical CI + Holm + 9/9 gate")
+    print(f"  primary fair-budget evaluation rows: {fair['evaluation_rows']}/1440")
+    print(f"  primary fair-budget claim gates: {fair['primary_gate_passed']}/25")
+    print("  earlier 1M diagnostic, proposed generalization/runtime, and component evidence: verified")
     print("  manuscript files: excluded")
     return 0
 

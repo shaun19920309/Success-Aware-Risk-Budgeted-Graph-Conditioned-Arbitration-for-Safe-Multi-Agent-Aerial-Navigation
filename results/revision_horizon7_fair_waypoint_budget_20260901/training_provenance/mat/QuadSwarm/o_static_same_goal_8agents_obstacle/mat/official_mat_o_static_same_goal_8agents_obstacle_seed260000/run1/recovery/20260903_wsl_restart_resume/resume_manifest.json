@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-09-03T07:16:28.647507+00:00",
+  "reason": "wsl_restart",
+  "framework": "onpolicy",
+  "method": "mat",
+  "training_seed": 260000,
+  "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1",
+  "resume_step": 1024128,
+  "total_steps": 5000000,
+  "config_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/config.json",
+  "config_sha256": "ed8946f4aeffaf9b6916a4297050e8054c73290536d83cd0c6bae5d3671822f7",
+  "checkpoint_files": [
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/models/transformer_0.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/mat/QuadSwarm/o_static_same_goal_8agents_obstacle/mat/official_mat_o_static_same_goal_8agents_obstacle_seed260000/run1/recovery/20260903_wsl_restart_resume/source_models/transformer_0.pt",
+      "sha256": "ed5817f39805b72de94f985cec4ff4b382e5333c4a17e7b29a727ce4a3964d44",
+      "bytes": 2371783
+    }
+  ],
+  "lagrangian_multiplier": null,
+  "restored_state": {
+    "model_weights": true,
+    "value_normalizer": false,
+    "lagrangian_multiplier": false,
+    "optimizer": false,
+    "process_rng": false,
+    "environment_rng": false
+  },
+  "limitations": [
+    "The legacy checkpoint did not contain optimizer state.",
+    "The legacy checkpoint did not contain process or environment RNG state.",
+    "Legacy on-policy checkpoints did not contain ValueNorm state.",
+    "Subsequent checkpoints include restartable training_state.pt files."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-09-03T07:16:28.501942+00:00",
+  "reason": "wsl_restart",
+  "framework": "onpolicy",
+  "method": "ippo",
+  "training_seed": 260001,
+  "run_dir": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1",
+  "resume_step": 3584128,
+  "total_steps": 5000000,
+  "config_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/config.json",
+  "config_sha256": "203a5f85277b8844f1868eb8e1d7fc939e436ae3e49bf21100440525e65ecb8e",
+  "checkpoint_files": [
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/models/actor.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/recovery/20260903_wsl_restart_resume/source_models/actor.pt",
+      "sha256": "7ad10948a51bb45cebeee0b9e853b24e62e2ca464a46207396158b261b9abff0",
+      "bytes": 95766
+    },
+    {
+      "source_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/models/critic.pt",
+      "snapshot_path": "/mnt/h/xzl/sci1/\u5b9e\u9a8c\u5e73\u53f0_baselines_branch_graph_conditioned_lagrangian_shield/results/revision_horizon7_fair_waypoint_budget_20260901/training/ippo/QuadSwarm/o_static_same_goal_8agents_obstacle/ippo/official_ippo_o_static_same_goal_8agents_obstacle_seed260001/run1/recovery/20260903_wsl_restart_resume/source_models/critic.pt",
+      "sha256": "abafb769d8e1e9fdd525a3e37351df8a983d8ecbe3048c5c25ba701ea1993e60",
+      "bytes": 93805
+    }
+  ],
+  "lagrangian_multiplier": null,
+  "restored_state": {
+    "model_weights": true,
+    "value_normalizer": false,
+    "lagrangian_multiplier": false,
+    "optimizer": false,
+    "process_rng": false,
+    "environment_rng": false
+  },
+  "limitations": [
+    "The legacy checkpoint did not contain optimizer state.",
+    "The legacy checkpoint did not contain process or environment RNG state.",
+    "Legacy on-policy checkpoints did not contain ValueNorm state.",
+    "Subsequent checkpoints include restartable training_state.pt files."
+  ]
+}

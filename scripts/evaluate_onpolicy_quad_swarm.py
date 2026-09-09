@@ -98,6 +98,38 @@ def env_args_from_config(config: Namespace, args: argparse.Namespace) -> Dict:
         "shared_goal_slot_radius": float(
             getattr(config, "shared_goal_slot_radius", 0.0)
         ),
+        "agent_collision_reward": float(
+            getattr(config, "agent_collision_reward", 0.0)
+        ),
+        "fair_hierarchy": bool(getattr(config, "fair_hierarchy", False)),
+        "fair_randomize_episode_resets": bool(
+            getattr(config, "fair_hierarchy", False)
+        ),
+        "fair_staging_radius": float(
+            getattr(config, "fair_staging_radius", 1.20)
+        ),
+        "fair_staging_ready_radius": float(
+            getattr(config, "fair_staging_ready_radius", 0.30)
+        ),
+        "fair_egress_radius": float(getattr(config, "fair_egress_radius", 1.20)),
+        "fair_max_staging_frames": int(
+            getattr(config, "fair_max_staging_frames", 350)
+        ),
+        "fair_waypoint_clearance_buffer": float(
+            getattr(config, "fair_waypoint_clearance_buffer", 0.35)
+        ),
+        "fair_waypoint_grid_resolution": float(
+            getattr(config, "fair_waypoint_grid_resolution", 0.25)
+        ),
+        "fair_waypoint_room_margin": float(
+            getattr(config, "fair_waypoint_room_margin", 0.15)
+        ),
+        "fair_waypoint_reached_radius": float(
+            getattr(config, "fair_waypoint_reached_radius", 0.30)
+        ),
+        "fair_waypoint_replan_interval": int(
+            getattr(config, "fair_waypoint_replan_interval", 25)
+        ),
     }
     for key, value in {
         "num_agents": getattr(args, "num_agents", None),

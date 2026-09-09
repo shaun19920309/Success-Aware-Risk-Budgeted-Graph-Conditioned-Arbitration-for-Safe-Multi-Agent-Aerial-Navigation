@@ -391,6 +391,81 @@ def load_bounded_waypoint_expert(
     )
 
 
+def wrap_synchronized_waypoint_expert(
+    expert: RuntimeExpert,
+    env: QuadSwarmOnPolicyEnv,
+) -> RuntimeExpert:
+    """Give a frozen RL policy the final method's synchronized A* targets."""
+
+    coordinator = make_bounded_waypoint_coordinator()
+    dwell = np.zeros(env.n_agents, dtype=np.int64)
+    reached = np.zeros(env.n_agents, dtype=bool)
+    has_acted = False
+
+    def reset() -> None:
+        nonlocal coordinator, dwell, reached, has_acted
+        expert.reset()
+        coordinator = make_bounded_waypoint_coordinator()
+        coordinator.reset(env)
+        dwell = np.zeros(env.n_agents, dtype=np.int64)
+        reached = np.zeros(env.n_agents, dtype=bool)
+        has_acted = False
+
+    def reset_done(dones: np.ndarray) -> None:
+        nonlocal dwell, reached
+        done_flags = np.asarray(dones, dtype=bool)
+        expert.reset_done(done_flags)
+        if np.any(done_flags):
+            dwell[done_flags] = 0
+            reached[done_flags] = False
+
+    def act(obs: np.ndarray, masks: np.ndarray, deterministic: bool) -> np.ndarray:
+        nonlocal dwell, reached, has_acted
+        if has_acted:
+            positions, velocities = swarm_pos_vel(env)
+            goals = np.asarray(swarm_goals(env), dtype=np.float64)
+            goal_distance = np.linalg.norm(positions - goals, axis=1)
+            speed = np.linalg.norm(velocities, axis=1)
+            inside = (goal_distance <= 0.5) & (speed <= 0.5)
+            dwell = np.where(inside, dwell + 1, 0)
+            reached |= dwell >= 10
+        targets = coordinator.active_targets(env, reached)
+        policy_obs = waypoint_conditioned_observations(obs, targets, env)
+        actions = expert.act(policy_obs, masks, deterministic)
+        has_acted = True
+        return actions
+
+    def snapshot() -> object:
+        return {
+            "expert": expert.snapshot(),
+            "coordinator": copy.deepcopy(coordinator),
+            "dwell": dwell.copy(),
+            "reached": reached.copy(),
+            "has_acted": has_acted,
+        }
+
+    def restore(state: object) -> None:
+        nonlocal coordinator, dwell, reached, has_acted
+        if not isinstance(state, dict):
+            raise ValueError(f"Invalid synchronized waypoint state for {expert.name}")
+        expert.restore(state["expert"])
+        coordinator = copy.deepcopy(state["coordinator"])
+        dwell = np.asarray(state["dwell"], dtype=np.int64).copy()
+        reached = np.asarray(state["reached"], dtype=bool).copy()
+        has_acted = bool(state["has_acted"])
+
+    return RuntimeExpert(
+        name=expert.name,
+        kind=f"{expert.kind}_synchronized_waypoint",
+        run_dir=expert.run_dir,
+        act_fn=act,
+        reset_fn=reset,
+        reset_done_fn=reset_done,
+        snapshot_fn=snapshot,
+        restore_fn=restore,
+    )
+
+
 def load_experts(args: argparse.Namespace, env: QuadSwarmOnPolicyEnv, device: torch.device) -> dict[str, RuntimeExpert]:
     experts: dict[str, RuntimeExpert] = {}
     for item in args.onpolicy_expert or []:
@@ -399,6 +474,16 @@ def load_experts(args: argparse.Namespace, env: QuadSwarmOnPolicyEnv, device: to
     for item in args.harl_expert or []:
         name, run_dir = parse_named_path(item)
         experts[name] = load_harl_expert(name, run_dir, env, device)
+    for item in args.synchronized_waypoint_onpolicy_expert or []:
+        name, run_dir = parse_named_path(item)
+        experts[name] = wrap_synchronized_waypoint_expert(
+            load_onpolicy_expert(name, run_dir, env, device), env
+        )
+    for item in args.synchronized_waypoint_harl_expert or []:
+        name, run_dir = parse_named_path(item)
+        experts[name] = wrap_synchronized_waypoint_expert(
+            load_harl_expert(name, run_dir, env, device), env
+        )
     for item in args.bounded_waypoint_expert or []:
         name, run_dir = parse_named_path(item)
         experts[name] = load_bounded_waypoint_expert(name, run_dir, env, device)
@@ -4901,6 +4986,17 @@ def evaluate_pool(
             )
     else:
         summary["waypoint_enabled"] = 0.0
+    synchronized_waypoint_experts = sorted(
+        name
+        for name, expert in experts.items()
+        if expert.kind.endswith("_synchronized_waypoint")
+    )
+    summary["synchronized_waypoint_expert_enabled"] = float(
+        bool(synchronized_waypoint_experts)
+    )
+    summary["synchronized_waypoint_expert_names"] = ";".join(
+        synchronized_waypoint_experts
+    )
     for name, count in active_expert_frame_counts.items():
         summary[f"expert_active_rate_{name}"] = safe_div(
             float(count),
@@ -4948,6 +5044,18 @@ def main() -> int:
     parser.add_argument("--base-run-dir", required=True, help="Run directory used to build the QuadSwarm eval env.")
     parser.add_argument("--onpolicy-expert", action="append", default=[], help="On-policy expert as NAME=RUN_DIR.")
     parser.add_argument("--harl-expert", action="append", default=[], help="HARL expert as NAME=RUN_DIR.")
+    parser.add_argument(
+        "--synchronized-waypoint-onpolicy-expert",
+        action="append",
+        default=[],
+        help="On-policy expert evaluated with synchronized A* targets as NAME=RUN_DIR.",
+    )
+    parser.add_argument(
+        "--synchronized-waypoint-harl-expert",
+        action="append",
+        default=[],
+        help="HARL expert evaluated with synchronized A* targets as NAME=RUN_DIR.",
+    )
     parser.add_argument(
         "--bounded-waypoint-expert",
         action="append",
